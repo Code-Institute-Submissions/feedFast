@@ -1,13 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-   <h1>Restaurant Menu Page</h1> 
-   
-</body>
-</html>
+{% extends "base.html" %}
+{% load staticfiles %}
+
+
+{% block content %}
+
+<h1>{{ restaurant.name }}</h1>
+<p>{{ restaurant.description }}</p>
+<p>Rating</p>
+
+<h2>{{ menu.name }}</h2>
+
+<h3>{{ menu_item.menu_category }}</h3>
+{% for menu_item in menu_items %}
+<div class="details col-md-6">
+					   <br>
+						<h3 class="product-title">{{ menu_item.name }}</h3>
+						<p class="price">Price: €{{ menu_item.price }}<p>
+{% endfor %}
+
+
+
+{% endblock %}

@@ -1,7 +1,21 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 
 
 {% block content %}
+
+<section id="landingImage" class="bg-dark">
+    <div class="container-fluid">
+    <div class="row max-viewport align-items-center">
+    <div class="col-12">
+    <div class="row">
+    <img class="img-responsive banner"  src="{% static 'home/images/muffinSmaller.png' %}"></img>
+    <p class="landingText">Pre-order<br>Pre-pay<br>Eat Faster</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <br>
     {% for restaurant in restaurants %}
     <div class="container-fluid">

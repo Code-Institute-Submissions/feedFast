@@ -1,7 +1,36 @@
 body {
     font-family: 'Work Sans', sans-serif;
     padding-top: 50px;
-    
+    }
+
+.banner {
+            background-size: cover;
+            z-index: 1;
+}
+
+.navbar-trans {
+  background: white; }
+
+.navbar-nav {
+    font-size: 1.5rem;
+}
+
+
+#landingImage {
+position: relative;
+text-align: right;
+color: white;
+margin-top: 0px;
+
+}
+
+.landingText {
+    position: absolute;
+    margin: auto;
+    margin-left: 20px;
+    top: 20%; left: 0px; bottom: 0; right: 0;
+	font-family: 'Karla', sans-serif;
+    font-size: 5rem;
 }
 
 .alert {
