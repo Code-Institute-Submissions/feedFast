@@ -16,13 +16,16 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from home.views import get_home_page
+from restaurants.views import get_restaurant_page
 from restaurants import urls as restaurants_urls
+from accounts import urls as accounts_urls
 from django.conf import settings
 from django.views.static import serve
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', get_home_page, name='home'),
+    url(r'^$', get_restaurant_page, name='home'),
     url(r'^restaurants/', include(restaurants_urls)),
+    url(r'^accounts/', include(accounts_urls)),
     url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT})
 ]
