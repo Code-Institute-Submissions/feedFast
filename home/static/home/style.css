@@ -39,3 +39,32 @@ margin-top: 0px;
     font-size: 1.5rem;
     text-align: center;
 }
+
+
+.cardText {
+    font-size: 1.8rem;
+}
+
+.cardPostPublish {
+    font-size: 1.4rem;
+    color: white;
+}
+
+.btn-default {
+    font-size: 1.5rem;
+    background: #6EC1C8;
+}
+
+.card {
+    padding: 20px 10px 20px 10px;
+    padding-bottom: 40px;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.50), 0 6px 60px 0 rgba(0, 0, 0, 0.50);
+}
+
+
+.cardTitle{
+    color: white;
+    text-align: center;
+    font-size: 4rem;
+    vertical-align: middle;
+}
