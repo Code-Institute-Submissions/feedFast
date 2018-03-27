@@ -1,14 +1,22 @@
 {% extends 'base.html' %}
-
 {% block content %}
-    <h2>Success!</h2>
-    <p>Welcome back {{ user.username }} </p>
-    <button class="btn btn-default" onclick="location.href='{% url 'create_restaurant' %}'">Create a restaurant</button>
    
-   
-    {% for restaurant in user.vendor.restaurants.all %}
-   
-    <div class="container-fluid">
+    {% if user.is_authenticated %}
+        <h3 class="vendorWelcome">Hi {{ user.username }}, welcome to your dashboard <i class="fa fa-heart"></i></h3>
+        {% endif %}
+        <br>
+        <div class="newRestaurant">
+        <h4 class="newRestHeading">Ready to add new restaurants?</h4>
+        <button class="btn btn-default" onclick="location.href='{% url 'create_restaurant' %}'">Create a restaurant</button>
+        </div>
+        <br>
+        <hr>
+        <div class="vendorProfileRestaurants">
+        <h4>Your Restaurants</h4>
+        <p>Click the restaurants below to edit, add or delete menus and / or menu items.</p>
+        <br>
+  {% for restaurant in user.vendor.restaurants.all %}
+            <div class="container-fluid">
         <div class="row cardRow">
         <div class="col-lg-4 col-sm-4 col-xs-10 text-center">
             <div class="card" style="background-image:url({{ MEDIA_URL }}{{restaurant.image}})">
@@ -16,12 +24,64 @@
                         <br>
                         <p><button class="btn btn-default postButton" onclick="location.href='{% url 'restaurant_detail' restaurant.id %}'">View Menu</button></p>
                         <br>
-                        <p class="cardPostPublish">{{ restaurant.tag }}</p>
+                        <p class="cardPostPublish">{{ restaurant.tag }} {{restaurant.views}}</p>
                     </div>
                     <br>
                     </div>
+                     {% endfor %}
+ </div>
+ <hr>
+    
+    <div class="vendorProfileStats">
+        <h4>Your Stats</h4>
+        <p>Check out the number of times your restaurants have been viewed, how many bookings have been made and the total revenue generated. .</p>
+        <br>
+ 
+      
+                <div class="container-fluid">
+                    <div class="row statsRow">
+                    <div class="col-lg-4 col-sm-4 col-xs-10 text-center">
+                        <div class="card statCard">
+                                <h3 class="statcardTitle">Restaurant Views</h3>
+                                    <br>
+                                    <span><i class="fa fa-eye fa-3x"></i></span>
+                                    <br>
+                                    <br>
+                                    <p class="statViewsCard">300</p>
+                                </div>
+                                </div>
+                              
+                                
+                                <div class="col-lg-4 col-sm-4 col-xs-10 text-center">
+                                <div class="card statCard">
+                                <h3 class="statcardTitle">Bookings</h3>
+                                    <br>
+                                    <span><i class="fa fa-calendar fa-3x"></i></span>
+                                    <br>
+                                    <br>
+                                    <p class="statViewsCard">100</p>
+                                </div>
+                                </div>
+                                
+                                <div class="col-lg-4 col-sm-4 col-xs-10 text-center">
+                                <div class="card statCard">
+                                <h3 class="statcardTitle">Revenue</h3>
+                                    <br>
+                                    <span><i class="fa fa-credit-card fa-3x"></i></span>
+                                    <br>
+                                    <br>
+                                    <p class="statViewsCard">€1000</p>
+                                </div>
+                                </div>
+                                
+                                </div>
+                                </div>
+                                </div>
+                               
+                   
 
-    {% endfor %}
-    
-    
-    {% endblock %}
+ 
+ <br>
+            
+{% endblock %}
+ 

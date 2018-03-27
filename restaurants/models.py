@@ -10,6 +10,7 @@ class Restaurant(models.Model):
     image = models.ImageField(upload_to='images')
     tag = models.CharField(max_length=30, blank=True, null=True)
     city = models.CharField(max_length=64, default="Dublin")
+    views = models.IntegerField(default=0)
     
     def __str__(self):
         return self.name
