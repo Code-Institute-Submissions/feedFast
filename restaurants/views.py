@@ -15,11 +15,7 @@ def restaurant_detail(request, id):
     menu_item = Menu_item.objects.all()
     return render(request, "restaurant_detail.html", {'restaurant': restaurant, 'menu': menu, 'menu_items': menu_item})
 
-
-
-
 def create_restaurant(request):
-     
     if not request.user.is_authenticated:
         return HttpResponseForbidden()
         

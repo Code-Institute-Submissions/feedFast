@@ -4,7 +4,7 @@ from accounts.models import Vendor
 
 # Create your models here.
 class Restaurant(models.Model):
-    vendor = models.ForeignKey(Vendor)
+    vendor = models.ForeignKey(Vendor, related_name="restaurants")
     name = models.CharField(max_length=254, blank=False)
     description = models.TextField()
     image = models.ImageField(upload_to='images')
@@ -16,7 +16,7 @@ class Restaurant(models.Model):
     
 
 class Menu(models.Model):
-    restaurant = models.ForeignKey(Restaurant)
+    restaurant = models.ForeignKey(Restaurant, related_name="menu")
     name = models.CharField(max_length=254, default="standard",blank=False)
 
   

@@ -5,6 +5,7 @@ from .forms import UserLoginForm
 from .forms import UserRegistrationForm, CustomerRegistrationForm
 from django.contrib.auth.decorators import login_required
 from .models import Vendor, Customer
+from restaurants.models import Restaurant
 
 # Create your views here.
 def logout(request):
@@ -39,9 +40,15 @@ def login(request):
     
     return render(request, 'accounts/login.html', { 'form': form })
 
+
 @login_required()
-def profile(request):
-    return render(request, 'accounts/profile.html')
+def profile_vendor(request):
+    return render(request, 'accounts/profile_vendor.html')
+
+@login_required()
+def profile_customer(request):
+    return render(request, 'accounts/profile_customer.html')
+    
     
 def register_vendor(request):
     if request.method == 'POST':

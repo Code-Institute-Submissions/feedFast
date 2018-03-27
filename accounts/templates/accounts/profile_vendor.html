@@ -2,15 +2,12 @@
 
 {% block content %}
     <h2>Success!</h2>
-    <p>You are logged in as {{ user.email }} </p>
-    
-    
-    {% if user.Vendor %}
-    <p>Sell all the food</p>
+    <p>Welcome back {{ user.username }} </p>
      <button class="btn btn-default" onclick="location.href='{% url 'create_restaurant' %}'">Create a restaurant</button>
-    {% endif %}
    
-    {% for restaurant in restaurants %}
+   
+    {% for restaurant in user.vendor.restaurants.all %}
+   
     <div class="container-fluid">
         <div class="row cardRow">
         <div class="col-lg-4 col-sm-4 col-xs-10 text-center">
@@ -25,9 +22,4 @@
                     </div>
 
     {% endfor %}
-    
-    
-    {% if user.Customer %}
-    <p>Eat all the food</p>
-    {% endif %}
-{% endblock content %}
+    {% endblock %}
