@@ -1,9 +1,10 @@
 from django.db import models
 from django import forms
+from accounts.models import Vendor
 
 # Create your models here.
 class Restaurant(models.Model):
-    # vendor = models.ForeignKey('auth.User')
+    vendor = models.ForeignKey(Vendor)
     name = models.CharField(max_length=254, blank=False)
     description = models.TextField()
     image = models.ImageField(upload_to='images')
