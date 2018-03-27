@@ -3,14 +3,14 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class Vendor(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="Vendor")
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="vendor")
     
     def __str__(self):
         return self.user.username + " Vendor Account"
     
 
 class Customer(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="Customer")
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="customer")
     city = models.CharField(max_length=100)
     #store all user data here. 
         
