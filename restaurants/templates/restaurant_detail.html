@@ -7,6 +7,23 @@
 <h1>{{ restaurant.name }}</h1>
 <p>{{ restaurant.description }}</p>
 <p>Rating</p>
+<h3>Your Menus</h3>
+
+<ul>
+{% for menu in menus %}
+	<li>{{ menu.name }}</li>
+{% endfor %}
+</ul>
+Create a new menu
+		<form method="POST" action="{% url 'add_menu' restaurant.id %}">
+        {% csrf_token %}
+       
+        {{ form }}
+        
+        <input type="submit" value="Submit"/>
+    </form>
+
+
 
 <h2>{{ menu.name }}</h2>
 

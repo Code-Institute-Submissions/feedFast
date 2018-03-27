@@ -3,7 +3,7 @@
 {% block content %}
     <h2>Success!</h2>
     <p>Welcome back {{ user.username }} </p>
-     <button class="btn btn-default" onclick="location.href='{% url 'create_restaurant' %}'">Create a restaurant</button>
+    <button class="btn btn-default" onclick="location.href='{% url 'create_restaurant' %}'">Create a restaurant</button>
    
    
     {% for restaurant in user.vendor.restaurants.all %}
@@ -22,4 +22,6 @@
                     </div>
 
     {% endfor %}
+    
+    
     {% endblock %}

@@ -16,7 +16,7 @@ class Restaurant(models.Model):
     
 
 class Menu(models.Model):
-    restaurant = models.ForeignKey(Restaurant, related_name="menu")
+    restaurant = models.ForeignKey(Restaurant, related_name="menus")
     name = models.CharField(max_length=254, default="standard",blank=False)
 
   

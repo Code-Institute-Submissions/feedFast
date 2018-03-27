@@ -41,7 +41,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="{% url 'restaurants' %}">Restaurants <i class="fa fa-cutlery"></i></a></li>
                     {% if user.is_authenticated %}
-                    {% if user.Vendor %}
+                    {% if user.vendor %}
                     <li><a href="{% url 'profile_vendor' %}">Profile <i class="fa fa-user"></i></a></li>
                     {% else %}
                      <li><a href="{% url 'profile_customer' %}">Profile <i class="fa fa-user"></i></a></li>
