@@ -70,9 +70,15 @@ def register_vendor(request):
     
 def register_customer(request):
     if request.method == 'POST':
-        form = UserRegistrationForm(request.POST)
-        if form.is_valid():
-            form.save()
+        user_form = UserRegistrationForm(request.POST)
+        type_form = CustomerRegistrationForm(request.POST)
+        
+        if user_form.is_valid() and type_form.is_valid():
+            user = user_form.save()
+            customer = type_form.save(commit=False)
+            customer.user = user
+            customer.save()
+            
 
             user = auth.authenticate(username=request.POST.get('username'),
                                      password=request.POST.get('password1'))
