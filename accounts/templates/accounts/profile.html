@@ -3,4 +3,13 @@
 {% block content %}
     <h2>Success!</h2>
     <p>You are logged in as {{ user.email }} </p>
+    
+    
+    {% if user.Vendor %}
+    <p>Sell all the food</p>
+    {% endif %}
+    
+    {% if user.Customer %}
+    <p>Eat all the food</p>
+    {% endif %}
 {% endblock content %}

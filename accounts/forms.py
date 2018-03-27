@@ -3,6 +3,7 @@ from django.contrib import messages, auth
 from django.core.exceptions import ValidationError
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from .models import Vendor, Customer
 
 class UserLoginForm(forms.Form):
     username = forms.CharField()
@@ -45,3 +46,8 @@ class UserRegistrationForm(UserCreationForm):
             instance.save()
 
         return instance
+        
+class CustomerRegistrationForm(forms.ModelForm):
+    class Meta:
+        model=Customer
+        fields=['city']

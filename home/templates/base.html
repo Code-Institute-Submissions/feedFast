@@ -44,7 +44,8 @@
                     <li><a href="{% url 'profile' %}">Profile <i class="fa fa-user"></i></a></li>
                     <li><a href="{% url 'logout' %}">Log Out <i class="fa fa-sign-out"></i></a></li>
                     {% else %}
-                    <li><a href="{% url 'register' %}">Register <i class="fa fa-user-plus"></i></a></li>
+                    <li><a href="{% url 'register_vendor' %}">Register Vendor <i class="fa fa-user-plus"></i></a></li>
+                    <li><a href="{% url 'register_customer' %}">Register Customer<i class="fa fa-user-plus"></i></a></li>
                     <li><a href="{% url 'login' %}">Log In <i class="fa fa-sign-in"></i></a></li>
                     {% endif %}
                     <li><a href="#">Cart <i class="fa fa-shopping-cart"></i><label class="badge badge-light">{{ items_in_cart }}</label></a></a></li>

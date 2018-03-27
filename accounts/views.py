@@ -2,8 +2,9 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib import auth, messages
 from .forms import UserLoginForm
-from .forms import UserRegistrationForm
+from .forms import UserRegistrationForm, CustomerRegistrationForm
 from django.contrib.auth.decorators import login_required
+from .models import Vendor, Customer
 
 # Create your views here.
 def logout(request):
@@ -42,7 +43,32 @@ def login(request):
 def profile(request):
     return render(request, 'accounts/profile.html')
     
-def register(request):
+def register_vendor(request):
+    if request.method == 'POST':
+        user_form = UserRegistrationForm(request.POST)
+        if user_form.is_valid():
+            user = user_form.save()
+            vendor = Vendor()
+            vendor.user = user
+            vendor.save
+
+            user = auth.authenticate(username=request.POST.get('username'),
+                                     password=request.POST.get('password1'))
+
+            if user:
+                auth.login(request, user)
+                messages.success(request, "You have successfully registered")
+                return redirect('profile')
+
+            else:
+                messages.error(request, "unable to log you in at this time!")
+
+    else:
+        user_form = UserRegistrationForm()
+
+    return render(request, 'accounts/register.html', {'user_form': user_form})
+    
+def register_customer(request):
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
@@ -60,6 +86,8 @@ def register(request):
                 messages.error(request, "unable to log you in at this time!")
 
     else:
-        form = UserRegistrationForm()
+        user_form = UserRegistrationForm()
+        type_form = CustomerRegistrationForm()
 
-    return render(request, 'accounts/register.html', {'form': form}) 
+    return render(request, 'accounts/register.html', {'user_form': user_form, 'type_form': type_form}) 
+
