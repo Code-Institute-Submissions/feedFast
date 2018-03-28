@@ -28,12 +28,12 @@ class Menu(models.Model):
     
 class Menu_item(models.Model):
     menu = models.ForeignKey(Menu, related_name='items')
-    # restaurant = models.ForeignKey(Restaurant, related_name='restaurant')
     menu_category = models.IntegerField(choices=MENU_CATEGORY_CHOICES, default=1)
     name = models.CharField(max_length=254, default='')
     description = models.TextField()
     price = models.IntegerField(default=0)
     
+   
 
     def __str__(self):
         return self.menu.restaurant.name + " " +  self.menu.name + " " + self.name

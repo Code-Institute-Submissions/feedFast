@@ -13,9 +13,9 @@ def get_restaurant_page(request):
 def restaurant_detail(request, id):
     restaurant = get_object_or_404(Restaurant, pk=id)
     form = createMenuForm()
-    #menu_form = createMenuItemsForm()
     menus = Menu.objects.all()
     menu_item = Menu_item.objects.all()
+    
     return render(request, "restaurant_detail.html", {'restaurant': restaurant, 'menus': menus, 'menu_items': menu_item, 'form': form})
 
 def add_menu(request, restaurant_id):
@@ -29,8 +29,9 @@ def add_menu(request, restaurant_id):
             menu.restaurant = restaurant
             menu.save()
             
-            
             return redirect(reverse('restaurant_detail', args=(restaurant_id,)))
+            
+            
     
 def create_restaurant(request):
     if not request.user.is_authenticated:

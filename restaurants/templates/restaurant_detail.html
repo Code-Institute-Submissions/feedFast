@@ -7,6 +7,9 @@
 <h1>{{ restaurant.name }}</h1>
 <p>{{ restaurant.description }}</p>
 <p>Rating</p>
+
+<hr>
+
 <h3>Your Menus</h3>
 
 <ul>
@@ -16,7 +19,8 @@
 {% endif %}
 {% endfor %}
 </ul>
-Create a new menu
+<hr>
+<h3>Create a new menu </h3>
 		<form method="POST" action="{% url 'add_menu' restaurant.id %}">
         {% csrf_token %}
        
@@ -25,18 +29,28 @@ Create a new menu
         <input type="submit" value="Submit"/>
     </form>
 
-
+<hr>
 
 <h2>{{ menu.name }}</h2>
 
-<h3>{{ menu_item.menu_category }}</h3>
-{% for menu_item in menu_items %}
-<div class="details col-md-6">
-					   <br>
-						<h3 class="product-title">{{ menu_item.name }}</h3>
-						<p class="price">Price: €{{ menu_item.price }}<p>
-{% endfor %}
 
+<div class = "container">
+    <div class="row">
+            <ul>
+{% regroup menu_items by get_menu_category_display as category_list %}
+{% for category in category_list %}
+<li>{{ category.grouper }}</li>
+<ul>
+    {% for dish in category.list %}
+    <li>{{ dish.name }}</li>
+    {% endfor %}
+</ul>
+{% endfor %}
+                
+
+</ul>
+				</div>
+				</div>
 
 
 {% endblock %}
