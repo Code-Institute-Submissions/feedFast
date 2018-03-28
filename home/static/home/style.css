@@ -62,29 +62,31 @@ margin-top: 0px;
 }
 
 .card {
-    background-color: #6EC1C8;
+    background-color: white;
     padding: 20px 10px 20px 10px;
     padding-bottom: 40px;
     box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.50), 0 6px 60px 0 rgba(0, 0, 0, 0.50);
 }
 
+.dashboardCard {
+    background-color: white;
+    margin-top: 20px;
+}
 
 .statViewsCard {
-    font-size: 1.5rem;
+    font-size: 2rem;
+    background-color: white;
 }
 
 .newRestaurant {
-    text-align: center;
     font-size: 1.5rem;
 }
 
 .vendorProfileRestaurants {
-    text-align: center;
     font-size: 1.5rem;
 }
 
 .vendorProfileStats {
-    text-align: center;
     font-size: 1.5rem;
 }
 

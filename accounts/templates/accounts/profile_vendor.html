@@ -1,24 +1,31 @@
 {% extends 'base.html' %}
 {% block content %}
-   
+     <div class="container">
+	 <div class="card dashboardCard">
+    
     {% if user.is_authenticated %}
         <h3 class="vendorWelcome">Hi {{ user.username }}, welcome to your dashboard <i class="fa fa-heart"></i></h3>
         {% endif %}
         <br>
-        <div class="newRestaurant">
+        <div class="container-fluid">
+        <div class="row newRestaurant">
+        <div class="col-12">
         <h4 class="newRestHeading">Ready to add new restaurants?</h4>
         <button class="btn btn-default" onclick="location.href='{% url 'create_restaurant' %}'">Create a restaurant</button>
         </div>
+        </div>
+        </div>
+       
         <br>
         <hr>
         
             <div class="vendorProfileStats">
         <h4>Your Stats</h4>
-        <p>Check out the number of times your restaurants have been viewed, how many bookings have been made and the total revenue generated. .</p>
+        <p>Check out the number of times your restaurants have been viewed, how many bookings have been made and the total revenue generated.</p>
         <br>
  
       
-                <div class="container">
+                <div class="container-fluid">
                     <div class="row statsRow">
                     <div class="col-lg-4 col-sm-4 col-xs-10 text-center">
                         <div class="card statCard">
@@ -79,12 +86,9 @@
                      {% endfor %}
  </div>
  <hr>
-    
-           
-                   
 
- 
- <br>
+</div>
+</div>
             
 {% endblock %}
  

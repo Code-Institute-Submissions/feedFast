@@ -13,6 +13,7 @@ def get_restaurant_page(request):
 def restaurant_detail(request, id):
     restaurant = get_object_or_404(Restaurant, pk=id)
     form = createMenuForm()
+    #menu_form = createMenuItemsForm()
     menus = Menu.objects.all()
     menu_item = Menu_item.objects.all()
     return render(request, "restaurant_detail.html", {'restaurant': restaurant, 'menus': menus, 'menu_items': menu_item, 'form': form})
@@ -46,3 +47,4 @@ def create_restaurant(request):
         form = RestaurantForm()
     
     return render(request, 'restaurant_reg.html', {'restaurantForm': form})
+

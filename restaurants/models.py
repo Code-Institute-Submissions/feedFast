@@ -1,6 +1,8 @@
 from django.db import models
 from django import forms
 from accounts.models import Vendor
+from .choices import MENU_CATEGORY_CHOICES
+
 
 # Create your models here.
 class Restaurant(models.Model):
@@ -24,17 +26,10 @@ class Menu(models.Model):
     def __str__(self):
         return self.restaurant.name + " " + self.name
     
-MENU_CATEGORY_CHOICES = [
-    (1, "Starter"), 
-    (2, "Main"),
-    (3, "Desert" ),
-    (4, "Drinks"),
-    ]
-    
 class Menu_item(models.Model):
     menu = models.ForeignKey(Menu, related_name='items')
     # restaurant = models.ForeignKey(Restaurant, related_name='restaurant')
-    menu_category = forms.ChoiceField(label='Category', choices=MENU_CATEGORY_CHOICES)
+    menu_category = models.IntegerField(choices=MENU_CATEGORY_CHOICES, default=1)
     name = models.CharField(max_length=254, default='')
     description = models.TextField()
     price = models.IntegerField(default=0)
