@@ -11,7 +11,9 @@
 
 <ul>
 {% for menu in menus %}
+{% if menu.restaurant.id == restaurant.id  %}
 	<li>{{ menu.name }}</li>
+{% endif %}
 {% endfor %}
 </ul>
 Create a new menu
