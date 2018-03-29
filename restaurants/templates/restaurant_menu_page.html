@@ -18,7 +18,9 @@
 
 <ul style ="list-style-type:none">
     {% for dish in category.list %}
-    <li class="menuListItem"><strong>{{ dish.name }}</strong> | {{ dish.description }} | €{{ dish.price}} <a class="btn btn-default editButton" href ="{% url 'edit_menu_item' restaurant.id menu.id dish.id %}">Edit</a>
+    <li class="menuListItem"><strong>{{ dish.name }}</strong> | {{ dish.description }} | €{{ dish.price}} 
+    <a class="btn btn-default editButton" href ="{% url 'edit_menu_item' restaurant.id menu.id dish.id %}">Edit</a>
+    <form method="POST" action="{% url 'delete_menu_item' restaurant.id menu.id dish.id %}">{% csrf_token %}<input type="submit" value="Delete"></form>
     <br>
     {% endfor %}
 </ul>

@@ -81,3 +81,10 @@ def add_menu_item(request, restaurant_id, menu_id):
         form.save()
             
     return redirect(reverse ('get_restaurant_menu', args=(restaurant_id, menu_id)))
+
+
+def delete_menu_item(request,  restaurant_id, menu_id, menu_item_id):
+    menu_item = get_object_or_404(Menu_item, pk=menu_item_id)
+    menu_item.delete()
+    return redirect(reverse ('get_restaurant_menu', args=(restaurant_id, menu_id)))
+    

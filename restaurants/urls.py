@@ -9,5 +9,5 @@ urlpatterns = [
     url(r'^(\d+)/menu/(\d+)/$', get_restaurant_menu, name='get_restaurant_menu'),
     url(r'^(\d+)/menu/(\d+)/additem', add_menu_item, name='add_menu_item'),
     url(r'^(\d+)/menu/(\d+)/edititem/(\d+)/$', edit_menu_item, name='edit_menu_item'),
-
+    url(r'^(\d+)/menu/(\d+)/deleteitem/(\d+)/$', delete_menu_item, name='delete_menu_item'),
  ]

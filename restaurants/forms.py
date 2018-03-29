@@ -18,7 +18,6 @@ class createMenuItemsForm(forms.ModelForm):
         fields = ('menu', 'menu_category', 'name', 'description', 'price')
 
 class EditMenuItemForm(forms.ModelForm):
-    
     class Meta:
         model = Menu_item
         fields = ('menu', 'menu_category', 'name', 'description', 'price')
