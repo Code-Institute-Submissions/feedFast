@@ -18,19 +18,29 @@ body {
 
 #landingImage {
 position: relative;
-text-align: right;
+text-align: left;
 color: white;
 margin-top: 0px;
-
+-moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        
 }
 
 .landingText {
     position: absolute;
     margin: auto;
-    margin-left: 20px;
+    margin-right: 30px;
     top: 20%; left: 0px; bottom: 0; right: 0;
 	font-family: 'Karla', sans-serif;
     font-size: 5rem;
+    -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
 }
 
 .alert {
@@ -125,4 +135,8 @@ margin-top: 0px;
 
 .deleteForm {
     display: inline-block;
+}
+
+.restaurantDisplayHeader{
+    text-align: center;
 }
