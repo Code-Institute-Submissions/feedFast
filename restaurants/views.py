@@ -4,6 +4,7 @@ from .models import Restaurant, Menu, Menu_item
 from .forms import RestaurantForm
 from django.http import HttpResponseForbidden
 from .forms import createMenuForm
+from .forms import EditMenuItemForm
 # Create your views here.
 
 def get_restaurant_page(request):
@@ -56,14 +57,16 @@ def get_restaurant_menu(request, restaurant_id, menu_id):
     return render(request, 'restaurant_menu_page.html', {'menu_items': menu_items, 'menu': menu, 'restaurant': restaurant})
 
 
-# def edit_menu_item(request, restaurant_id, menu_id): 
-#     item = get_object_or_404(Menu_item, pk=restaurant_id)
+def edit_menu_item(request, restaurant_id, menu_id, menu_item_id): 
+    menu = get_object_or_404(Menu, pk=menu_id)
+    menu_item = get_object_or_404(Menu_item, pk=menu_item_id)
+    restaurant = get_object_or_404(Restaurant, pk=restaurant_id)
 
-#     if request.method == "POST":
-#         form = EditMenuItemForm(request.POST, instance=item)
-#         if form.is_valid():
-#             form.save()
-#             return redirect("restaurant_detail")
+    if request.method == "POST":
+        form = EditMenuItemForm(request.POST, instance=menu_item)
+        if form.is_valid():
+            form.save()
+            return redirect("restaurants")
    
-#     form = EditMenuItemForm(instance=item)
-#     return render(request, "edit_menu_item.html", {'form': form})
+    form = EditMenuItemForm(instance=menu_item)
+    return render(request, "edit_menu_item.html", {'form': form, 'menu_item': menu_item, 'menu': menu, 'restaurant': restaurant})
