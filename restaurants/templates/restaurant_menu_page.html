@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load bootstrap_tags %}
 {% block content %}
 
 
@@ -7,15 +7,8 @@
 
 
 <div class = "container">
-    <div class="row">
-{% for item in menu.items.all %}
-<p>{{ item }}</p>
-{% endfor %}
 
-<hr>
-
-
-{% regroup menu.items.all|dictsort:"menu_category" by menu_category as category_list %}
+{% regroup menu.items.all|dictsort:"menu_category" by get_menu_category_display as category_list %}
 {% for category in category_list %}
 <h3>{{ category.grouper }}</h3>
 <br>
@@ -26,10 +19,23 @@
     {% endfor %}
 </ul>
 {% endfor %}
-                
+                </ul>
+				</div>
+				</div>
 
-</ul>
-				</div>
-				</div>
+<div class="addItemForm">
+    
+     <h1>Add Item...</h1>
+    
+    <form method="POST" action="{% url 'add_menu_item' restaurant.id menu.id %}}">
+        {% csrf_token %}
+        
+        {{ form | as_bootstrap }}
+        
+        <input type="submit" value="Submit"/>
+    </form>
+    
+    
+</div>
 
 {% endblock content %} 
