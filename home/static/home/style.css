@@ -110,17 +110,19 @@ margin-top: 0px;
 
 .editButton {
     font-size: 1rem;
-    margin-left: 30px;
-    padding-left: 10px;
-    padding-right: 10px;
+    margin-left: 20px;
     background-color: #99ADAC;
     color: white;
 }
 
 .menuListItem {
-    line-height: 4;
+    line-height: 3;
 }
 
 .menuTitle {
     text-align: center;
+}
+
+.deleteForm {
+    display: inline-block;
 }
