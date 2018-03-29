@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.shortcuts import render, get_object_or_404, redirect, reverse, HttpResponse
 from django.http import HttpResponse
 from .models import Restaurant, Menu, Menu_item
 from .forms import RestaurantForm
@@ -49,3 +49,21 @@ def create_restaurant(request):
     
     return render(request, 'restaurant_reg.html', {'restaurantForm': form})
 
+def get_restaurant_menu(request, restaurant_id, menu_id):
+    menu = get_object_or_404(Menu, pk=menu_id)
+    menu_items = Menu_item.objects.all()
+    restaurant = get_object_or_404(Restaurant, pk=restaurant_id)
+    return render(request, 'restaurant_menu_page.html', {'menu_items': menu_items, 'menu': menu, 'restaurant': restaurant})
+
+
+# def edit_menu_item(request, restaurant_id, menu_id): 
+#     item = get_object_or_404(Menu_item, pk=restaurant_id)
+
+#     if request.method == "POST":
+#         form = EditMenuItemForm(request.POST, instance=item)
+#         if form.is_valid():
+#             form.save()
+#             return redirect("restaurant_detail")
+   
+#     form = EditMenuItemForm(instance=item)
+#     return render(request, "edit_menu_item.html", {'form': form})
