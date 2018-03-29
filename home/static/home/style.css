@@ -100,3 +100,27 @@ margin-top: 0px;
 .vendorWelcome {
     text-align: center;
 }
+
+.addItemForm {
+    background-image: url(images/basil-dinner.jpg);
+    background-size: cover;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.editButton {
+    font-size: 1rem;
+    margin-left: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #99ADAC;
+    color: white;
+}
+
+.menuListItem {
+    line-height: 4;
+}
+
+.menuTitle {
+    text-align: center;
+}

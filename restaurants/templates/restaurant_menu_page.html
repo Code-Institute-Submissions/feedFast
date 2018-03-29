@@ -1,20 +1,24 @@
 {% extends 'base.html' %}
 {% load bootstrap_tags %}
 {% block content %}
+{% load staticfiles %}
 
+ <div class="container">
+	 <div class="card">
 
-<h2>{{ menu.name }}</h2>
+<h2 class="menuTitle">{{ menu.name }}</h2>
 
 
 <div class = "container">
 
 {% regroup menu.items.all|dictsort:"menu_category" by get_menu_category_display as category_list %}
 {% for category in category_list %}
+<hr>
 <h3>{{ category.grouper }}</h3>
-<br>
+
 <ul style ="list-style-type:none">
     {% for dish in category.list %}
-    <li><strong>{{ dish.name }}</strong> | {{ dish.description }} | €{{ dish.price}} <a class="btn btn-default postButton" href ="{% url 'edit_menu_item' restaurant.id menu.id dish.id %}">Edit</a>
+    <li class="menuListItem"><strong>{{ dish.name }}</strong> | {{ dish.description }} | €{{ dish.price}} <a class="btn btn-default editButton" href ="{% url 'edit_menu_item' restaurant.id menu.id dish.id %}">Edit</a>
     <br>
     {% endfor %}
 </ul>
@@ -23,10 +27,14 @@
 				</div>
 				</div>
 
-<div class="addItemForm">
-    
+<div class="addItemForm p-5 bg-dark">
+<div class="container-fluid"> 
+<div class="row">
+    <div class="col-sm-12 col-xs-12">
+    <br>
      <h1>Add Item...</h1>
-    
+    <br>
+    <div class="col-sm-6 col-sm-offset-3">
     <form method="POST" action="{% url 'add_menu_item' restaurant.id menu.id %}}">
         {% csrf_token %}
         
@@ -34,8 +42,12 @@
         
         <input type="submit" value="Submit"/>
     </form>
-    
-    
+
+</div>
+</div>    
+</div>    
+</div>
+</div>
 </div>
 
 {% endblock content %} 
