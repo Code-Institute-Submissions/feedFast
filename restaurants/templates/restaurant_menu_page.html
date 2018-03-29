@@ -8,8 +8,14 @@
 
 <div class = "container">
     <div class="row">
+{% for item in menu.items.all %}
+<p>{{ item }}</p>
+{% endfor %}
 
-{% regroup menu_items by get_menu_category_display as category_list %}
+<hr>
+
+
+{% regroup menu.items.all|dictsort:"menu_category" by menu_category as category_list %}
 {% for category in category_list %}
 <h3>{{ category.grouper }}</h3>
 <br>

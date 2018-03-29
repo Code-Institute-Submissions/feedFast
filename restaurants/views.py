@@ -52,9 +52,8 @@ def create_restaurant(request):
 
 def get_restaurant_menu(request, restaurant_id, menu_id):
     menu = get_object_or_404(Menu, pk=menu_id)
-    menu_items = Menu_item.objects.all()
     restaurant = get_object_or_404(Restaurant, pk=restaurant_id)
-    return render(request, 'restaurant_menu_page.html', {'menu_items': menu_items, 'menu': menu, 'restaurant': restaurant})
+    return render(request, 'restaurant_menu_page.html', {'menu': menu, 'restaurant': restaurant})
 
 
 def edit_menu_item(request, restaurant_id, menu_id, menu_item_id): 
@@ -66,7 +65,8 @@ def edit_menu_item(request, restaurant_id, menu_id, menu_item_id):
         form = EditMenuItemForm(request.POST, instance=menu_item)
         if form.is_valid():
             form.save()
-            return redirect("restaurants")
+            
+            return redirect(reverse ('get_restaurant_menu', args=(restaurant_id, menu_id)))
    
     form = EditMenuItemForm(instance=menu_item)
     return render(request, "edit_menu_item.html", {'form': form, 'menu_item': menu_item, 'menu': menu, 'restaurant': restaurant})

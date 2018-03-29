@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load bootstrap_tags %}
 {% block content %}
     
     <h1>Edit Item...</h1>
@@ -7,7 +7,7 @@
     <form method="POST">
         {% csrf_token %}
         
-        {{ form }}
+        {{ form | as_bootstrap }}
         
         <input type="submit" value="Submit"/>
     </form>

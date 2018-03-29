@@ -36,4 +36,4 @@ class Menu_item(models.Model):
    
 
     def __str__(self):
-        return self.menu.restaurant.name + " " +  self.menu.name + " " + self.name
+        return self.menu.restaurant.name + " " +  self.menu.name + " " + self.name + " " + str(self.menu_category)
