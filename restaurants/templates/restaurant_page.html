@@ -10,23 +10,22 @@
     <div class="row max-viewport align-items-center">
     <div class="col-12">
     <div class="row">
-    <img class="img-responsive banner"  src="{% static 'home/images/muffinSmaller.png' %}"></img>
-     <!--<div class="col-sm-6 landingText">-->
+    <img class="img-responsive banner"  src="{% static 'home/images/muffinSmallerleft.png' %}"></img>
     <p class="landingText">Book a table<br>Pre-order your food<br>Prepare to enjoy
     <br>
     <br>
-         <!--<form action="{% url 'search' %}" role="search" class="custom-search-input">-->
+         <form action="{% url 'search' %}" role="search" class="custom-search-input">
                 <span class="input-group col-md-4">
-                    <input type="text" class="form-control input-lg" placeholder="Search for food, restaurants or locations" />
-                    <span class="input-group-btn">
+                    <input type="text" class="form-control input-lg" name="query" id="search" placeholder="Search for food, restaurants or locations" />
+                    <span class="input-group-btn"> 
                         <button class="btn btn-info btn-lg" type="button">
                             <i class="glyphicon glyphicon-search"></i>
                         </button>
-                        
                     </span>
                 </span>
-                <!--</form>-->
-    </p>
+                </form>
+                
+ 
    
                 </div>
             </div>

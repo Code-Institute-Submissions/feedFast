@@ -30,30 +30,24 @@ position: relative;
 text-align: left;
 color: white;
 margin-top: 0px;
--moz-transform: scaleX(-1);
-        -o-transform: scaleX(-1);
-        -webkit-transform: scaleX(-1);
-        transform: scaleX(-1);
-        filter: FlipH;
 }
 
-.landingText,
-.landingText form{
+.landingText{
     position: absolute;
     margin: auto;
-    margin-right: 110px;
+    margin-left: 110px;
     top: 30%; left: 0px; bottom: 0; right: 0;
 	font-family: 'Karla', sans-serif;
     font-size: 4rem;
-    -moz-transform: scaleX(-1);
-        -o-transform: scaleX(-1);
-        -webkit-transform: scaleX(-1);
-        transform: scaleX(-1);
-        filter: FlipH;
+   
 }
 
 .custom-search-input {
     position: absolute;
+    margin: auto;
+    margin-left: 110px;
+    top: 400px; left: 0px; bottom: 0; right: 0;
+    padding-right: 10px;
 }
 
 .alert {
