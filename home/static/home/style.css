@@ -8,6 +8,11 @@ body {
             z-index: 1;
 }
 
+.navbar-brand {
+    font-size: 4rem;
+    margin-left: 20px;
+}
+
 .navbar-trans {
   background: white; }
 
@@ -15,6 +20,10 @@ body {
     font-size: 1.5rem;
 }
 
+.postButton {
+    color: white;
+    border-color: #6EC1C8;
+}
 
 #landingImage {
 position: relative;
@@ -26,16 +35,16 @@ margin-top: 0px;
         -webkit-transform: scaleX(-1);
         transform: scaleX(-1);
         filter: FlipH;
-        
 }
 
-.landingText {
+.landingText,
+.landingText form{
     position: absolute;
     margin: auto;
-    margin-right: 30px;
-    top: 20%; left: 0px; bottom: 0; right: 0;
+    margin-right: 110px;
+    top: 30%; left: 0px; bottom: 0; right: 0;
 	font-family: 'Karla', sans-serif;
-    font-size: 5rem;
+    font-size: 4rem;
     -moz-transform: scaleX(-1);
         -o-transform: scaleX(-1);
         -webkit-transform: scaleX(-1);
@@ -43,11 +52,24 @@ margin-top: 0px;
         filter: FlipH;
 }
 
+.custom-search-input {
+    position: absolute;
+}
+
 .alert {
-    background: linear-gradient(to right, black, #eef2f3, black); 
+    background: white; 
     color: black;
     font-size: 1.5rem;
     text-align: center;
+}
+
+.btn-info {
+    background-color: white;
+    border-color: gray;
+}
+
+.glyphicon-search {
+    color: gray;
 }
 
 

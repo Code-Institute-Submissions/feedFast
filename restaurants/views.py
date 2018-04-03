@@ -87,4 +87,9 @@ def delete_menu_item(request,  restaurant_id, menu_id, menu_item_id):
     menu_item = get_object_or_404(Menu_item, pk=menu_item_id)
     menu_item.delete()
     return redirect(reverse ('get_restaurant_menu', args=(restaurant_id, menu_id)))
-    
+
+def search_restaurants(request):
+    match = request.GET.get('match')
+    restaurants = Restaurant.objects.filter(name__icontains=request.GET['query'])
+    return render(request, "restaurant_page.html", {"restaurants": restaurants})
+ 

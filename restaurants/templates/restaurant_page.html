@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load staticfiles %}
+{% load bootstrap_tags %}
 
 
 {% block content %}
@@ -11,7 +12,21 @@
     <div class="row">
     <img class="img-responsive banner"  src="{% static 'home/images/muffinSmaller.png' %}"></img>
      <!--<div class="col-sm-6 landingText">-->
-    <p class="landingText">Pre-order<br>Pre-pay<br>Enjoy</p>
+    <p class="landingText">Book a table<br>Pre-order your food<br>Prepare to enjoy
+    <br>
+    <br>
+         <!--<form action="{% url 'search' %}" role="search" class="custom-search-input">-->
+                <span class="input-group col-md-4">
+                    <input type="text" class="form-control input-lg" placeholder="Search for food, restaurants or locations" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-info btn-lg" type="button">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                        
+                    </span>
+                </span>
+                <!--</form>-->
+    </p>
    
                 </div>
             </div>
