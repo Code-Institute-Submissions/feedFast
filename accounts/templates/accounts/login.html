@@ -1,14 +1,26 @@
 {% extends "base.html" %}
 {% load bootstrap_tags %}
 {% block content %}
-<h1>Form</h1>
-    <form role="form" method="post">
-        <legend>Login</legend>
+<div class="loginPage p-5 bg-dark">
+<div class="container-fluid"> 
+<div class="row">
+<div class="col-sm-12 loginHeader">
+    <br>
+    <h1>Login</h1>
+    </div>
+    <br>
+<div class="col-sm-6 col-xs-12 col-sm-offset-3">
+    <form role="form" method="post" class="loginForm">
         {% csrf_token %}
         {{ form | as_bootstrap }}
         <p><a href={% url 'password_reset' %}>Forgot my password</a></p>
         <div class="form-group">
             <button type="submit" class="btn btn-primary">Login</button>
-        </div>
+          
+    </div>
     </form>
+    </div>
+    </div>
+    </div>
+    </div>
 {% endblock %}

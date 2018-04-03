@@ -95,6 +95,8 @@ margin-top: 0px;
 .btn-default {
     font-size: 1.5rem;
     background: #6EC1C8;
+    color: white;
+    border-color: #6EC1C8;
 }
 
 .card {
@@ -148,7 +150,14 @@ margin-top: 0px;
     background-size: cover;
     font-size: 1.5rem;
     color: white;
- 
+}
+
+.regPage {
+    background-image: url(images/heartMugs.jpeg);
+    background-size: cover;
+    font-size: 1.5rem;
+    color: white;
+    -webkit-filter: opacity(0.7);
 }
 
 .dashButton {
@@ -177,11 +186,26 @@ margin-top: 0px;
     text-align: center;
 }
 
+.regForm {
+    padding: 80px 80px 80px 80px;
+    text-align: center;
+    border: 2px solid white;
+    background-image: inherit;
+    opacity: none;
+}
+
+.loginForm {
+    padding: 80px 80px 80px 80px;
+    text-align: center;
+    border: 2px solid white;
+    background-image: inherit;
+    opacity: none;
+}
+
 .addItemFormButton {
     background-color: white;
     font-size: 1.7rem;
     color: green;
-    
 }
 .menuTitle {
     text-align: center;
@@ -191,6 +215,6 @@ margin-top: 0px;
     display: inline-block;
 }
 
-.restaurantDisplayHeader{
+.restaurantDisplayHeader, .regHeader{
     text-align: center;
 }
