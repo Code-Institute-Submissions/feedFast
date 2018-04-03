@@ -3,8 +3,10 @@
 
 
 {% block content %}
-
+ <div class="container">
+	 <div class="card">
 <h1>{{ restaurant.name }}</h1>
+<h3>Your restaurant description</h3>
 <p>{{ restaurant.description }}</p>
 <p>Rating</p>
 
@@ -12,6 +14,17 @@
 
 
 <div class="vendorProfileStats">
+    <h3>Create a new menu </h3>
+		<form method="POST" action="{% url 'add_menu' restaurant.id %}">
+        {% csrf_token %}
+       
+        {{ form }}
+        
+        <input type="submit" value="Submit"/>
+    </form>
+
+<hr>
+
         <h3>Your Menus</h4>
         <p>Click on a menu to edit, add or delete menu items</p>
         <br>
@@ -33,44 +46,6 @@
 {% endfor %}
 </ul>
 <hr>
-<h3>Create a new menu </h3>
-		<form method="POST" action="{% url 'add_menu' restaurant.id %}">
-        {% csrf_token %}
-       
-        {{ form }}
-        
-        <input type="submit" value="Submit"/>
-    </form>
-
-<hr>
-
-
-
-<h2>{{ menu_item.name }}</h2>
-
-
-<div class = "container">
-    <div class="row">
-
-{% regroup menu_items by get_menu_category_display as category_list %}
-{% for category in category_list %}
-<h3>{{ category.grouper }}</h3>
-<br>
-<ul style ="list-style-type:none">
-    {% for dish in category.list %}
-    
-    {{restaurant.id}}
-    {{menu.id}}
-    <li><strong>{{ dish.name }}</strong> | {{ dish.description }} | €{{ dish.price}} <button class="btn btn-default postButton" onclick="location.href=#">Edit</button></li>
-    <br>
-    {% endfor %}
-</ul>
-{% endfor %}
-                
-
-</ul>
-				</div>
-				</div>
-
-
+</div>
+</div>
 {% endblock %}
