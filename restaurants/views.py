@@ -78,7 +78,10 @@ def add_menu_item(request, restaurant_id, menu_id):
 
     form = createMenuItemsForm(request.POST)
     if form.is_valid():
-        form.save()
+        menu_item = form.save(commit=False)
+        menu_item.menu  = menu
+        menu_item.save()
+
             
     return redirect(reverse ('get_restaurant_menu', args=(restaurant_id, menu_id)))
 
