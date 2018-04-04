@@ -57,7 +57,7 @@ def register_vendor(request):
             user = user_form.save()
             vendor = Vendor()
             vendor.user = user
-            vendor.save
+            vendor.save()
 
             user = auth.authenticate(username=request.POST.get('username'),
                                      password=request.POST.get('password1'))

@@ -42,7 +42,7 @@ def create_restaurant(request):
         form = RestaurantForm(request.POST, request.FILES)
         if form.is_valid():
             restaurant = form.save(commit=False)
-            restaurant.vendor.user = request.user
+            restaurant.vendor = request.user.vendor
             restaurant.save()
             return redirect('profile_vendor')
     else:
