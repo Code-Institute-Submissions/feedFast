@@ -119,7 +119,12 @@ margin-top: 0px;
 
 .statViewsCard {
     font-size: 2rem;
-    background-color: white;
+  
+}
+
+.statCard{
+    opacity: 0.8;
+    background: linear-gradient(to right, #ebf1f6 0%, #abd3ee 56%, #6EC1C8 98%, #6EC1C8 100%);
 }
 
 .newRestaurant {
