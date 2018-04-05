@@ -2,7 +2,27 @@
 
 {% block content %}
     
-    {% if user.customer %}
-    <p>The restaurant's menu</p>
-    {% endif %}
+    <div class="container">
+	 <div class="card">
+        <h1>{{ restaurant.name }}</h1>
+        <h3>Restaurant description</h3>
+        <p>{{ restaurant.description }}</p>
+<hr>
+
+      
+<ul>
+{% for menu in menus %}
+{% if menu.restaurant.id == restaurant.id  %}
+<div class="container-fluid">
+        <div class="row cardRow">
+        <div class="col-lg-4 col-sm-4 col-xs-10 text-center">
+            <div class="card">
+	            <h3>{{ menu.name }}<h3>
+	                
+	               <a class="btn btn-default postButton" href ="#">View Menu</a>
+	   </div>
+	   </div>
+{% endif %}
+{% endfor %}
+
 {% endblock content %}

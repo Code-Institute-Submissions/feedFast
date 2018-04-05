@@ -56,8 +56,10 @@ def get_restaurant_menu(request, restaurant_id, menu_id):
     form = createMenuItemsForm()
     return render(request, 'restaurant_menu_page.html', {'form': form, 'menu': menu, 'restaurant': restaurant})
     
-def get_customer_view_restaurant(request, restaurant_id):
-    return render(request, 'customer_view_restaurant.html')
+def get_customer_view_restaurant(request, id):
+    restaurant = get_object_or_404(Restaurant, pk=id)
+    menus = Menu.objects.all()
+    return render(request, 'customer_view_restaurant.html', {'restaurant': restaurant, 'menus': menus})
    
 
 
