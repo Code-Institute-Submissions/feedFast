@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    
+<br>   
     <div class="container">
 	 <div class="card">
         <h1>{{ restaurant.name }}</h1>
@@ -9,7 +9,13 @@
         <p>{{ restaurant.description }}</p>
 <hr>
 
-      
+        <h3>Book a table</h3>
+        <p>Placeholder for table booking form. *Add to restaurant model* </p>
+
+<hr>
+
+<h3>Choose the menu you want to order from</h3>
+<br>
 <ul>
 {% for menu in menus %}
 {% if menu.restaurant.id == restaurant.id  %}
