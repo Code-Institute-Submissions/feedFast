@@ -82,7 +82,8 @@ def register_customer(request):
         
         if user_form.is_valid() and type_form.is_valid():
             user = user_form.save()
-            customer = type_form.save(commit=False)
+            customer = type_form.save()
+            customer = Customer()
             customer.user = user
             customer.save()
             

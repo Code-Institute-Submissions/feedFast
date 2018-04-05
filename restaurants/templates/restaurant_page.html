@@ -45,7 +45,7 @@
                     <span class="badge">10<br>mins</span>
                     <h3 class="cardTitle">{{ restaurant.name }}</h3>
                         <br>
-                        <p><button class="btn btn-default postButton" onclick="location.href='{% url 'restaurant_detail' restaurant.id %}'">View Menu</button></p>
+                        <p><button class="btn btn-default postButton" onclick="location.href='{% url 'get_customer_view_restaurant' restaurant.id  %}'">View Menu</button></p>
                         <br>
                         <p class="cardPostPublish">{{ restaurant.tag }}</p>
                     </div>
