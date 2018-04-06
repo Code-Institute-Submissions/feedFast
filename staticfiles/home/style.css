@@ -1,0 +1,227 @@
+body {
+    font-family: 'Work Sans', sans-serif;
+    padding-top: 50px;
+    }
+
+.banner {
+            background-size: cover;
+            width: 100%;
+            z-index: 1;
+}
+
+.navbar-brand {
+    font-size: 4rem;
+    margin-left: 20px;
+}
+
+.navbar-trans {
+  background: white; }
+
+.navbar-nav {
+    font-size: 1.5rem;
+}
+
+.postButton {
+    color: white;
+    border-color: #6EC1C8;
+}
+
+#landingImage {
+position: relative;
+text-align: left;
+color: white;
+margin-top: 0px;
+}
+
+.restaurantCard {
+    position: relative;
+}
+
+.landingText{
+    position: absolute;
+    margin: auto;
+    margin-left: 110px;
+    top: 30%; left: 0px; bottom: 0; right: 0;
+	font-family: 'Karla', sans-serif;
+    font-size: 4rem;
+   
+}
+
+.custom-search-input {
+    position: absolute;
+    margin: auto;
+    margin-left: 110px;
+    top: 400px; left: 0px; bottom: 0; right: 0;
+    padding-right: 10px;
+    margin-top: 40px;
+}
+
+.alert {
+    background: white; 
+    color: black;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.btn-info {
+    background-color: white;
+    border-color: gray;
+}
+
+.glyphicon-search {
+    color: gray;
+}
+
+
+.cardText {
+    font-size: 1.8rem;
+    
+}
+
+.badge {
+    background-color: red;
+    position: absolute;
+    font-size: 2rem;
+    margin: auto;
+	font-family: 'Karla', sans-serif;
+	margin-left: 180px;
+	border-radius: 50px;
+	padding: 10px 10px 10px 10px;
+}
+    
+.cardPostPublish {
+    font-size: 1.8rem;
+    color: white;
+}
+
+.btn-default {
+    font-size: 1.5rem;
+    background: #6EC1C8;
+    color: white;
+    border-color: #6EC1C8;
+}
+
+.card {
+    padding: 20px 10px 20px 10px;
+    padding-bottom: 40px;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.50), 0 6px 60px 0 rgba(0, 0, 0, 0.50);
+}
+
+.card {
+    background-color: white;
+    padding: 20px 10px 20px 10px;
+    padding-bottom: 40px;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.50), 0 6px 60px 0 rgba(0, 0, 0, 0.50);
+}
+
+.dashboardCard {
+    background-color: white;
+    margin-top: 20px;
+}
+
+.statViewsCard {
+    font-size: 2rem;
+  
+}
+
+.statCard{
+    opacity: 0.8;
+    background: white;
+}
+
+.newRestaurant {
+    font-size: 1.5rem;
+}
+
+.vendorProfileRestaurants {
+    font-size: 1.5rem;
+}
+
+.vendorProfileStats {
+    font-size: 1.5rem;
+}
+
+.cardTitle{
+    color: white;
+    text-align: center;
+    font-size: 4rem;
+    vertical-align: middle;
+}
+
+.vendorWelcome {
+    text-align: center;
+}
+
+.addItemForm {
+    background-image: url(images/basil-dinner.jpg);
+    background-size: cover;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.regPage {
+    background-image: url(images/heartMugs.jpeg);
+    background-size: cover;
+    font-size: 1.5rem;
+    color: white;
+    -webkit-filter: opacity(0.7);
+}
+
+.dashButton {
+  font-size: 1.8rem;
+    margin-left: 20px;
+    background-color: white;
+    font-size: 1.7rem;
+    color: green;
+    margin-top: 20px;
+}
+
+.editButton {
+    font-size: 1.2rem;
+    margin-left: 20px;
+    background-color: #99ADAC;
+    color: white;
+}
+
+.menuListItem {
+    line-height: 3;
+    font-size: 1.7rem;
+}
+
+.addItemForm {
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.regForm {
+    padding: 80px 80px 80px 80px;
+    text-align: center;
+    border: 2px solid white;
+    background-image: inherit;
+    opacity: none;
+}
+
+.loginForm {
+    padding: 80px 80px 80px 80px;
+    text-align: center;
+    border: 2px solid white;
+    background-image: inherit;
+    opacity: none;
+}
+
+.addItemFormButton {
+    background-color: white;
+    font-size: 1.7rem;
+    color: green;
+}
+.menuTitle {
+    text-align: center;
+}
+
+.deleteForm {
+    display: inline-block;
+}
+
+.restaurantDisplayHeader, .regHeader{
+    text-align: center;
+}
