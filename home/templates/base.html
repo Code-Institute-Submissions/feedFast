@@ -52,7 +52,7 @@
                     <li><a href="{% url 'register_customer' %}">Register Customer<i class="fa fa-user-plus"></i></a></li>
                     <li><a href="{% url 'login' %}">Log In <i class="fa fa-sign-in"></i></a></li>
                     {% endif %}
-                    <li><a href="#">Cart <i class="fa fa-shopping-cart"></i><label class="badge badge-light">{{ items_in_cart }}</label></a></a></li>
+                    <li><a href="{% url 'view_cart' %}">Cart <i class="fa fa-shopping-cart"></i><label class="badge badge-light">{{ items_in_cart }}</label></a></a></li>
                     <li>       
                   </li>
                 </ul>

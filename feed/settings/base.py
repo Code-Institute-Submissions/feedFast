@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'restaurants',
     'django_forms_bootstrap',
     'accounts',
+    'cart'
 ]
 
 MIDDLEWARE = [

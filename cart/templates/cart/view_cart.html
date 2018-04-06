@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+<h3 class="cartWelcome">Hi {{ user.get_username }}, welcome to your basket <br> <i class="fa fa-heart"></i></h3>
+{% endif %}
+
+{% include 'cart/_show_cart.html' %}
+
+<a href="£" type="button" class="checkout btn btn-default" role="button">Checkout</a>
+
+{% endblock content %}
