@@ -60,7 +60,11 @@ def get_customer_view_restaurant(request, id):
     restaurant = get_object_or_404(Restaurant, pk=id)
     menus = Menu.objects.all()
     return render(request, 'customer_view_restaurant.html', {'restaurant': restaurant, 'menus': menus})
-   
+
+def get_customer_menu(request, restaurant_id, menu_id):
+    menu = get_object_or_404(Menu, pk=menu_id)
+    restaurant = get_object_or_404(Restaurant, pk=restaurant_id)
+    return render(request, 'customer_view_menu.html', {'menu': menu, 'restaurant': restaurant})
 
 
 def edit_menu_item(request, restaurant_id, menu_id, menu_item_id): 

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+ <div class="container">
+	 <div class="card">
+
+<h2 class="menuTitle">{{ menu.name }}</h2>
+
+
+<div class = "container">
+
+{% regroup menu.items.all|dictsort:"menu_category" by get_menu_category_display as category_list %}
+{% for category in category_list %}
+<hr>
+<h3>{{ category.grouper }}</h3>
+
+<ul style ="list-style-type:none">
+    {% for dish in category.list %}
+    <li class="menuListItem"><strong>{{ dish.name }}</strong> | {{ dish.description }} | €{{ dish.price}} 
+    <a class="btn btn-default editButton" href ="#"><i class="fa fa-cart-plus"></i>
+
+</a>
+    </li>
+    <br>
+    {% endfor %}
+</ul>
+{% endfor %}
+{% endblock content %}

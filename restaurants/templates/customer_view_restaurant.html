@@ -25,7 +25,7 @@
             <div class="card">
 	            <h3>{{ menu.name }}<h3>
 	                
-	               <a class="btn btn-default postButton" href ="#">View Menu</a>
+	               <a class="btn btn-default postButton" href ="{% url 'get_customer_menu' restaurant.id menu.id %}">View Menu</a>
 	   </div>
 	   </div>
 {% endif %}
