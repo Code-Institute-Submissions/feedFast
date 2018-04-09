@@ -1,8 +1,10 @@
 <table class="table">
     <thead>
         <tr>
-            <th></th>    
-            <th>Product</th>    
+            <th></th>  
+            <th>Restaurant</th>
+            <th>Menu</th>
+            <th>Item</th>    
             <th>Quantity</th>    
             <th>Price</th>
             <th>Total</th> 
@@ -10,22 +12,21 @@
         </tr>
     </thead>
     <tbody>
-        {% for menu_item in cart_items %}
+        {% for item in cart_items %}
         <tr>
-            <td><img width="150" height="75" src="{{MEDIA_URL}}{{restaurant.image}}"/></td>    
-            <td>{{menu_item.name }}</td>    
-            <td>{{ menu_item.quantity}}</td>    
-            <td>€{{ menu_item.price }}</td>
-            <td>€{{ menu_item.total}}</td>
-            <td><form method="post" action="{% url 'delete_cart_item' item.menu_item_id %}">
-                {% csrf_token %}
-                <input type="submit" class="btn btn-default" value="Remove"/>
-                </form>
-            </td>
+            <td><img class="cartImage" width="150" height="75" src="{{MEDIA_URL}}{{ item.menu.restaurant.image}}"/></td>    
+            <td>{{ item.menu.restaurant.name }}</td>    
+            <td>{{ item.menu.name}}</td>  
+            <td>{{ item.menu_item.name }}</td>    
+            <td>{{ item.quantity }}</td>    
+            <td>€{{ item.menu_item.price }}</td>
+            <td>€{{ item.total }}</td>
         </tr>
         {% endfor %}
 
         <tr>
+            <td></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>

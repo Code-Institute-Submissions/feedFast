@@ -225,3 +225,23 @@ margin-top: 0px;
 .restaurantDisplayHeader, .regHeader{
     text-align: center;
 }
+
+.cartWelcome{
+  color: black;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.table thead th { 
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding-bottom: 100px;
+  margin-top: 50px;
+ 
+}
+
+.cartImage {
+    height: 100px;
+}

@@ -12,15 +12,17 @@ def view_cart(request):
 def add_to_cart(request):
     id = request.POST['id']
     quantity = int(request.POST['quantity'])
-
     cart = request.session.get('cart', {})
     cart[id] = cart.get(id, 0) + quantity
     
-    request.session['cart'] = cart   
+    request.session['cart'] = cart
+    tp=request.session['cart'] = cart
+    
+    print()
 
     return redirect('home')
-
-
+    
+    
 
 def delete_cart_item(request, id):
     cart = request.session.get('cart', {})
