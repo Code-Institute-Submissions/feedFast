@@ -9,6 +9,6 @@
 
 {% include 'cart/_show_cart.html' %}
 
-<a href="#" type="button" class="checkout btn btn-default" role="button">Checkout</a>
+<a href="{% url 'checkout' %}" type="button" class="checkout btn btn-default" role="button">Checkout</a>
 
 {% endblock content %}

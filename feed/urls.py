@@ -21,6 +21,7 @@ from restaurants import urls as restaurants_urls
 from accounts import urls as accounts_urls
 from django.views.static import serve
 from restaurants.views import search_restaurants
+from checkout import urls as checkout_urls
 from cart import urls as cart_urls
 from django.conf import settings
 
@@ -31,5 +32,6 @@ urlpatterns = [
     url(r'^accounts/', include(accounts_urls)),
     url(r'^search/', search_restaurants, name='search'),
     url(r'^cart/', include(cart_urls)),
+    url(r'^checkout/', include(checkout_urls)),
     url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT})
 ]
