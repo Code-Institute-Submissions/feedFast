@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from restaurants.models import Restaurant
 from decimal import Decimal
 from cart.utils import get_cart_items_and_total
+from django.contrib.auth.decorators import login_required
 
 def view_cart(request):
     cart = request.session.get('cart', {})

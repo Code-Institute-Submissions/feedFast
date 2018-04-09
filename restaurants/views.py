@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .models import Restaurant, Menu, Menu_item
 from .forms import RestaurantForm
 from django.http import HttpResponseForbidden
+from django.contrib.auth.decorators import login_required
 from .forms import createMenuForm
 from .forms import EditMenuItemForm, createMenuItemsForm
 # Create your views here.
