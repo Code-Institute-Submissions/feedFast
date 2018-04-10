@@ -96,9 +96,9 @@ margin-top: 0px;
 
 .btn-default {
     font-size: 1.5rem;
-    background: #6EC1C8;
+    background: #97CDC6;
     color: white;
-    border-color: #6EC1C8;
+    border-color: #97CDC6;
 }
 
 .card {
@@ -233,7 +233,7 @@ margin-top: 0px;
 }
 
 .table thead th { 
-  background-color: black;
+  background-color: #97CDC6;
   color: white;
   font-weight: bold;
   font-size: 1.5rem;
