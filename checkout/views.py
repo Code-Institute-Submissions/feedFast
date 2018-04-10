@@ -38,7 +38,9 @@ def checkout(request):
         
         # Charge the Card
         payment_form = MakePaymentForm(request.POST)
+        print("In charge card section")
         if payment_form.is_valid():
+            print("Form valid section")
             total = get_cart_items_and_total(cart)['total']
             total_in_cent = int(total*100)
             try:
