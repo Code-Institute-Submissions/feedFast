@@ -63,8 +63,15 @@ def checkout(request):
         order_form = OrderForm()
         payment_form = MakePaymentForm()
         context = {'order_form': order_form, 'payment_form': payment_form, 'publishable': settings.STRIPE_PUBLISHABLE_KEY }
+        
         cart = request.session.get('cart', {})
         cart_items_and_total = get_cart_items_and_total(cart)
         context.update(cart_items_and_total)
 
+        booking = { 'guests': request.session.get('guests', 0),
+                    'reservation_date': request.session.get('reservation_date', timezone.now()),
+                    'reservation_time': request.session.get('reservation_time', timezone.now())
+        }
+        context.update(booking)
+    
     return render(request, "checkout/checkout.html", context)

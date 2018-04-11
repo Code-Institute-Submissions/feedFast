@@ -17,10 +17,7 @@ def add_to_cart(request):
     cart[id] = cart.get(id, 0) + quantity
     
     request.session['cart'] = cart
-    tp=request.session['cart'] = cart
-    
-    print()
-
+ 
     return redirect('home')
     
     

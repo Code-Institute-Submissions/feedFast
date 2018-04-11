@@ -114,7 +114,13 @@ def book_table(request, restaurant_id):
     if request.method == "POST":
         form = ReservationForm(request.POST)
         if form.is_valid():
-            pass
+            order = form.save(commit = False)
+            print (order.reservation_guests, order.reservation_date, order.reservation_time)
+            
+            request.session['guests'] = order.reservation_guests
+            request.session['reservation_date'] = order.reservation_date
+            request.session['reservation_time'] = order.reservation_time
+            
     return redirect(reverse ('get_customer_view_restaurant', args=(restaurant_id,)))
     
  
