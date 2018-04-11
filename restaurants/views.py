@@ -5,7 +5,8 @@ from .forms import RestaurantForm
 from django.http import HttpResponseForbidden
 from django.contrib.auth.decorators import login_required
 from .forms import createMenuForm
-from .forms import EditMenuItemForm, createMenuItemsForm
+from .forms import EditMenuItemForm, createMenuItemsForm, ReservationForm
+import datetime
 # Create your views here.
 
 def get_restaurant_page(request):
@@ -60,7 +61,8 @@ def get_restaurant_menu(request, restaurant_id, menu_id):
 def get_customer_view_restaurant(request, id):
     restaurant = get_object_or_404(Restaurant, pk=id)
     menus = Menu.objects.all()
-    return render(request, 'customer_view_restaurant.html', {'restaurant': restaurant, 'menus': menus})
+    form = ReservationForm()
+    return render(request, 'customer_view_restaurant.html', {'form': form,'restaurant': restaurant, 'menus': menus})
 
 def get_customer_menu(request, restaurant_id, menu_id):
     menu = get_object_or_404(Menu, pk=menu_id)
@@ -106,4 +108,13 @@ def search_restaurants(request):
     match = request.GET.get('match')
     restaurants = Restaurant.objects.filter(name__icontains=request.GET['query'])
     return render(request, "restaurant_page.html", {"restaurants": restaurants})
+
+def book_table(request, restaurant_id): 
+    restaurant = get_object_or_404(Restaurant, pk=restaurant_id)
+    if request.method == "POST":
+        form = ReservationForm(request.POST)
+        if form.is_valid():
+            pass
+    return redirect(reverse ('get_customer_view_restaurant', args=(restaurant_id,)))
+    
  

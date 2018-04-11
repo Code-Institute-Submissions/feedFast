@@ -1,5 +1,6 @@
 from django import forms
 from .models import Restaurant, Menu, Menu_item 
+from checkout.models import Order
 
 
 class RestaurantForm(forms.ModelForm):
@@ -21,3 +22,8 @@ class EditMenuItemForm(forms.ModelForm):
     class Meta:
         model = Menu_item
         fields = ('menu', 'menu_category', 'name', 'description', 'price')
+
+class ReservationForm(forms.ModelForm):
+    class Meta: 
+        model = Order
+        fields = ('reservation_date', 'reservation_time', 'reservation_guests')
