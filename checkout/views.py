@@ -10,6 +10,8 @@ from django.conf import settings
 import stripe
 from django.contrib import messages
 from cart.utils import get_cart_items_and_total
+from restaurants.forms import ReservationForm
+import datetime 
 
 stripe.api_key = settings.STRIPE_SECRET
 # Create your views here.
@@ -21,7 +23,13 @@ def checkout(request):
         # Save The Order
         order_form = OrderForm(request.POST)
         order = order_form.save(commit=False)
-        order.date = timezone.now()
+        y = int(request.session['reservation_date_year'])
+        m = int(request.session['reservation_date_month'])
+        d = int(request.session['reservation_date_day'])
+        order.reservation_date = datetime.date(y,m,d)
+        order.reservation_time = request.session['reservation_time']
+        order.reservation_guests = request.session['guests']
+        order.customer = request.user.customer
         order.save()
         
         # Save the Order Line Items
@@ -68,10 +76,12 @@ def checkout(request):
         cart_items_and_total = get_cart_items_and_total(cart)
         context.update(cart_items_and_total)
 
-        booking = { 'guests': request.session.get('guests', 0),
-                    'reservation_date': request.session.get('reservation_date', timezone.now()),
+        booking = {'guests': request.session.get('guests', 0),
+                    'reservation_date_day': request.session.get('reservation_date_day', timezone.now()),
+                    'reservation_date_month': request.session.get('reservation_date_month', timezone.now()),
+                    'reservation_date_year': request.session.get('reservation_date_year', timezone.now()),
                     'reservation_time': request.session.get('reservation_time', timezone.now())
         }
-        context.update(booking)
+    context.update(booking)
     
     return render(request, "checkout/checkout.html", context)

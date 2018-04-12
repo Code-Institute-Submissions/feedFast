@@ -1,6 +1,7 @@
 from django import forms
 from .models import Restaurant, Menu, Menu_item 
 from checkout.models import Order
+from django.forms import extras
 
 
 class RestaurantForm(forms.ModelForm):
@@ -27,3 +28,4 @@ class ReservationForm(forms.ModelForm):
     class Meta: 
         model = Order
         fields = ('reservation_date', 'reservation_time', 'reservation_guests')
+        widgets = {'reservation_date': extras.SelectDateWidget}

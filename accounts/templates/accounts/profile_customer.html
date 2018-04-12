@@ -3,6 +3,23 @@
 {% block content %}
     
     {% if user.customer %}
-    <p>Eat all the food</p>
+    <h3>Hi, {{ user }}, welcome to your profile.</h3>
     {% endif %}
+    <hr>
+    
+    <h3>Getting started</h3>
+    <p>At FeedFast we believe you shoulnd't have to wait long for great food. In 3 simple steps you can eat in restaurants without the wait time. #Hangry, I don't think so 
+    </p>
+    <table>
+        <tr>
+           
+    <td> 1. Register or Login </td>
+    <td> 2. Choose a restaurant and book a table </td>
+    <td> 3. Choose a menu for that restaurant e.g. Lunch Menu, Early Bird, Kids Menu</td>
+    <td> 4. Choose the meals you and your party would like to eat</td>
+    <td> 5. Pre-order and pre-pay for your food</td>
+    <td> 6. Arrive on time and enjoy a hassle free, wait free dining experience.</td>
+        </td>
+        </tr>
+    </table>
 {% endblock content %}

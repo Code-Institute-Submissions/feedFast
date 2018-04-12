@@ -2,6 +2,8 @@ from django.db import models
 import datetime
 from restaurants.models import Restaurant, Menu, Menu_item
 from accounts.models import Customer
+from django import forms
+from django.forms import extras
 
 class Order(models.Model):
     customer = models.ForeignKey(Customer, related_name='orders')
@@ -13,7 +15,7 @@ class Order(models.Model):
     street_address_1 = models.CharField(max_length=40, blank=False)
     street_address_2 = models.CharField(max_length=40, blank=False)
     county = models.CharField(max_length=40, blank=False)
-    date = models.DateField()
+    date = models.DateField(auto_now_add=True)
     reservation_date =  models.DateField (blank=False)
     reservation_time =  models.TimeField (blank=False)
     reservation_guests = models.IntegerField(blank=False)
