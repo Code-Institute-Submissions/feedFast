@@ -24,8 +24,12 @@ class EditMenuItemForm(forms.ModelForm):
         model = Menu_item
         fields = ('menu', 'menu_category', 'name', 'description', 'price')
 
-class ReservationForm(forms.ModelForm):
+class ReservationForm(forms.ModelForm, forms.DateTimeField):
     class Meta: 
         model = Order
         fields = ('reservation_date', 'reservation_time', 'reservation_guests')
         widgets = {'reservation_date': extras.SelectDateWidget}
+        
+        
+       
+       

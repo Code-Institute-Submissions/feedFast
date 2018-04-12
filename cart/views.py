@@ -1,9 +1,10 @@
-from django.shortcuts import render, redirect, get_object_or_404
-from restaurants.models import Restaurant
+from django.shortcuts import render, redirect, get_object_or_404, reverse
+from restaurants.models import Restaurant, Menu, Menu_item
 from decimal import Decimal
 from cart.utils import get_cart_items_and_total
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
+
 
 def view_cart(request):
     cart = request.session.get('cart', {})
@@ -27,8 +28,11 @@ def add_to_cart(request):
     cart[id] = cart.get(id, 0) + quantity
     
     request.session['cart'] = cart
- 
-    return redirect('home')
+    
+    menu_item = get_object_or_404(Menu_item, pk=id)
+    menu = menu_item.menu
+    restaurant = menu.restaurant
+    return redirect(reverse('get_customer_menu', args=(restaurant.id, menu.id)))
     
     
 

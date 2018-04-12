@@ -9,6 +9,11 @@ p {
     font-size: 1.8rem;
 }
 
+a {
+    color: #55A1C5;
+}
+
+
 .banner {
             background-size: cover;
             width: 100%;
@@ -84,7 +89,7 @@ margin-top: 0px;
     
 }
 
-.badge {
+.timeBadge {
     background-color: red;
     position: absolute;
     font-size: 2rem;
@@ -93,6 +98,10 @@ margin-top: 0px;
 	margin-left: 180px;
 	border-radius: 50px;
 	padding: 10px 10px 10px 10px;
+}
+
+.badge-light {
+    background-color: #55A1C5;
 }
     
 .cardPostPublish {
@@ -117,13 +126,14 @@ margin-top: 0px;
     padding: 20px 10px 20px 10px;
     position: relative;
     color: white;
-    opacity: 0.8;
 }
 
 .customerProfileCardText {
     position: absolute;
     margin: auto;
     top: 30%; left: 0px; bottom: 0; right: 0;
+    margin-left: 20px;
+    margin-right: 20px;
 	font-family: 'Karla', sans-serif;
     font-size: 4rem;
     opacity: 1.0;
@@ -169,18 +179,19 @@ margin-top: 0px;
 }
 
 .addItemForm {
-    background-image: url(images/basil-dinner.jpg);
+    background-image: url(images/menu.jpeg);
     background-size: cover;
     font-size: 1.5rem;
     color: white;
 }
 
 .regPage {
-    background-image: url(images/heartMugs.jpeg);
+    background-image: url(images/burrito-coffee.jpg);
     background-size: cover;
     font-size: 1.5rem;
     color: white;
-    -webkit-filter: opacity(0.7);
+    padding-bottom: 40px;
+    
 }
 
 .dashButton {
