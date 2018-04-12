@@ -1,6 +1,8 @@
 body {
     font-family: 'Work Sans', sans-serif;
     padding-top: 50px;
+    margin-right: 20px;
+    margin-left: 20px;
     }
 
 p {
@@ -106,17 +108,27 @@ margin-top: 0px;
 }
 
 .card {
-    padding: 20px 10px 20px 10px;
-    padding-bottom: 40px;
-    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.50), 0 6px 60px 0 rgba(0, 0, 0, 0.50);
-}
-
-.card {
     background-color: white;
     padding: 20px 10px 20px 10px;
-    padding-bottom: 40px;
-    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.50), 0 6px 60px 0 rgba(0, 0, 0, 0.50);
 }
+
+.customerProfileCard {
+    background-color: white;
+    padding: 20px 10px 20px 10px;
+    position: relative;
+    color: white;
+    opacity: 0.8;
+}
+
+.customerProfileCardText {
+    position: absolute;
+    margin: auto;
+    top: 30%; left: 0px; bottom: 0; right: 0;
+	font-family: 'Karla', sans-serif;
+    font-size: 4rem;
+    opacity: 1.0;
+}
+
 
 .dashboardCard {
     background-color: white;

@@ -3,15 +3,14 @@
 
 {% block content %}
 <div class="container-fluid">
-        <div class="row text-center">
-<h3>Hi, {{ user }}, welcome to your profile.</h3>
+        <div class="row">
+<h3>Hi {{ user }}, welcome to your profile.</h3>
 </div>
 </div>
-
-<hr>
+<br>
  <div class="container-fluid">
-        <div class="row text-center">
-<p>At FeedFast we believe you shoulnd't have to wait long for great food. In 5 simple steps you can eat in restaurants without the wait time.<br> #Hangry, I don't think so
+        <div class="row">
+<p class="customerProfileExp">At FeedFast we believe you shoulnd't have to wait long for great food. In 5 simple steps you can eat in restaurants without the wait time.<br> #Hangry, I don't think so
 </p>
 </div>
 </div>
@@ -19,12 +18,12 @@
     <div class="container-fluid">
         <div class="row">
         <div class="col-xs-10 col-sm-8 col-lg-8">
-    <h2>How Does It Work</h2>
-    <p>1. First things first,  <a href="#">register</a> or <a href="#">login.</a><br> 
+    <h3>How Does It Work</h3>
+    <p>1. First things first,  <a href="https://wolfenchic-feed-fast.herokuapp.com/accounts/register/customer/">register</a> or <a href="https://wolfenchic-feed-fast.herokuapp.com/accounts/login/">login.</a><br> 
     </div>
     <br>
     <div class="col-xs-10 col-sm-8 col-lg-8">
-    <p>2. Choose a restaurant. Check out our exciting range of <a href="#">restaurants here.</a></p>
+    <p>2. Choose a restaurant. Check out our exciting range of <a href="https://wolfenchic-feed-fast.herokuapp.com/restaurants/">restaurants here.</a></p>
     </div>
     <br>
     <div class="col-xs-10 col-sm-8 col-lg-8">
@@ -46,7 +45,7 @@
   </div>
   <br>
     <div class="container-fluid">
-        <div class="row text-center">
+        <div class="row">
     <p> Arrive on time and enjoy a hassle free, wait free dining experience.</p> 
     </div>
     </div>
@@ -54,12 +53,27 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-4 col-sm-4 col-xs-12 text-center mb-3">
-            <div class="card">
-                <img class="img-responsive banner" src="{% static 'home/images/bread.jpg' %}"></img>
+            <div class="card customerProfileCard">
+                <img class="img-responsive" src="{% static 'home/images/insta.jpeg' %}"></img>
+                <br>
+                <p class="customerProfileCardText">More time for insta</p>
+            </div>
+        </div>
+        <div class="col-lg-4 col-sm-4 col-xs-12 text-center mb-3">
+            <div class="card customerProfileCard">
+                <img class="img-responsive" src="{% static 'home/images/relax.jpeg' %}"></img>
+                <br>
+                <p class="customerProfileCardText">More time to kick back</p>
+            </div>
+        </div>
+        <div class="col-lg-4 col-sm-4 col-xs-12 text-center mb-3">
+            <div class="card customerProfileCard">
+                <img class="img-responsive" src="{% static 'home/images/friendsEating.jpg' %}"></img>
+                <br>
+                <p class="customerProfileCardText">More time for laughs</p>
 
             </div>
         </div>
-
     </div>
 </div>
 {% endblock content %}
