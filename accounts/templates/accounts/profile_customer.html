@@ -1,25 +1,65 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %}   
+{% load staticfiles %}
 
 {% block content %}
-    
-    {% if user.customer %}
-    <h3>Hi, {{ user }}, welcome to your profile.</h3>
-    {% endif %}
-    <hr>
-    
-    <h3>Getting started</h3>
-    <p>At FeedFast we believe you shoulnd't have to wait long for great food. In 3 simple steps you can eat in restaurants without the wait time. #Hangry, I don't think so 
-    </p>
-    <table>
-        <tr>
-           
-    <td> 1. Register or Login </td>
-    <td> 2. Choose a restaurant and book a table </td>
-    <td> 3. Choose a menu for that restaurant e.g. Lunch Menu, Early Bird, Kids Menu</td>
-    <td> 4. Choose the meals you and your party would like to eat</td>
-    <td> 5. Pre-order and pre-pay for your food</td>
-    <td> 6. Arrive on time and enjoy a hassle free, wait free dining experience.</td>
-        </td>
-        </tr>
-    </table>
+<div class="container-fluid">
+        <div class="row text-center">
+<h3>Hi, {{ user }}, welcome to your profile.</h3>
+</div>
+</div>
+
+<hr>
+ <div class="container-fluid">
+        <div class="row text-center">
+<p>At FeedFast we believe you shoulnd't have to wait long for great food. In 5 simple steps you can eat in restaurants without the wait time.<br> #Hangry, I don't think so
+</p>
+</div>
+</div>
+
+    <div class="container-fluid">
+        <div class="row">
+        <div class="col-xs-10 col-sm-8 col-lg-8">
+    <h2>How Does It Work</h2>
+    <p>1. First things first,  <a href="#">register</a> or <a href="#">login.</a><br> 
+    </div>
+    <br>
+    <div class="col-xs-10 col-sm-8 col-lg-8">
+    <p>2. Choose a restaurant. Check out our exciting range of <a href="#">restaurants here.</a></p>
+    </div>
+    <br>
+    <div class="col-xs-10 col-sm-8 col-lg-8">
+    <p>3. Once you know what restaurant you're going to book a table.</p> 
+    </div>
+    <br>
+    <div class="col-xs-10 col-sm-8 col-lg-8">
+    <p>4. Choose the menu that's right for you. e.g. Early Bird, Set Menu, Lunch Menu etc.</p> 
+    </div>
+    <br>
+    <div class="col-xs-10 col-sm-8 col-lg-8">
+    <p>5. What do you fancy eating? Choose a dish from the range displayed on your chosen menu</p> 
+    </div>
+    <br>
+    <div class="col-xs-10 col-sm-8 col-lg-8">
+    <p>6. Pre-order and pre-pray for you food.</p> 
+    </div>
+    </div>
+  </div>
+  <br>
+    <div class="container-fluid">
+        <div class="row text-center">
+    <p> Arrive on time and enjoy a hassle free, wait free dining experience.</p> 
+    </div>
+    </div>
+<br>  
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4 col-sm-4 col-xs-12 text-center mb-3">
+            <div class="card">
+                <img class="img-responsive banner" src="{% static 'home/images/bread.jpg' %}"></img>
+
+            </div>
+        </div>
+
+    </div>
+</div>
 {% endblock content %}

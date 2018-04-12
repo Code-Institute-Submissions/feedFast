@@ -3,6 +3,10 @@ body {
     padding-top: 50px;
     }
 
+p {
+    font-size: 1.8rem;
+}
+
 .banner {
             background-size: cover;
             width: 100%;
@@ -96,9 +100,9 @@ margin-top: 0px;
 
 .btn-default {
     font-size: 1.5rem;
-    background: #97CDC6;
+    background: #55A1C5;
     color: white;
-    border-color: #97CDC6;
+    border-color: #55A1C5;
 }
 
 .card {
@@ -233,7 +237,7 @@ margin-top: 0px;
 }
 
 .table thead th { 
-  background-color: #97CDC6;
+  background-color: #55A1C5;
   color: white;
   font-weight: bold;
   font-size: 1.5rem;
