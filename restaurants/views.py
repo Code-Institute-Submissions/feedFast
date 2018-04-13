@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import createMenuForm
 from .forms import EditMenuItemForm, createMenuItemsForm, ReservationForm
 import datetime
+from django.contrib import auth, messages
 # Create your views here.
 
 def get_restaurant_page(request):
@@ -120,9 +121,13 @@ def book_table(request, restaurant_id):
             request.session['reservation_date_month'] = request.POST['reservation_date_month']
             request.session['reservation_date_year'] = request.POST['reservation_date_year']
             request.session['reservation_time'] = request.POST['reservation_time']
+            
+            messages.success(request, " 🍴  Great News, you've made a reservation! 🍴 ")
         
         else:
             print( form.errors )
+            messages.error(request, "unable to book your table")
+    
     return redirect(reverse ('get_customer_view_restaurant', args=(restaurant_id,)))
     
  

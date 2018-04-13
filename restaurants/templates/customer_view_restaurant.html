@@ -3,32 +3,41 @@
 
 {% block content %}
 <br>   
-    <div class="container">
-	 <div class="card">
+    <div class="container-fluid">
+	<div class="row">
+	    <div class="col-12">
         <h1>{{ restaurant.name }}</h1>
         <h3>Restaurant description</h3>
         <p>{{ restaurant.description }}</p>
 <hr>
-
-        <h3>Book a table</h3>
+</div>
+</div>
+</div>
+        <h3>Reservations</h3>
        <div class="ReservationForm p-5 bg-dark">
 <div class="container-fluid"> 
 <div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
+    <div class="col-sm-6 ReservationFormSection">
+        <h3>Book a new table</h3>
      <form method="POST" action="{% url 'book_table' restaurant.id %}}">
         {% csrf_token %}
-        
         {{ form | as_bootstrap }}
-        
         <input class="btn btn-default" type="submit" value="Submit"/>
     </form>
+</div>
 
+<div class="col-sm-6 ReservationMadeSection">
+<h3>Your Upcoming Reservations</h3>
+<p>Number of guests: {{ user.guests }}</p>
+<p>Time: {{ reservation_time }}</p>
+<p>Reservation date & time(dd/mm/yyyy): {{ reservation_date_day }}/{{ reservation_date_month }}/{{ reservation_date_year }}</p>
 </div>
+
 </div>    
 </div>    
 </div>
-</div>
-</div>
+
+
 
 
 <hr>
@@ -41,7 +50,7 @@
 <div class="container-fluid">
         <div class="row cardRow">
         <div class="col-lg-4 col-sm-4 col-xs-10 text-center">
-            <div class="card">
+            <div class="card restaurantMenu">
 	            <h3>{{ menu.name }}<h3>
 	               
 	               <a class="btn btn-default postButton" href ="{% url 'get_customer_menu' restaurant.id menu.id %}">View Menu</a>
