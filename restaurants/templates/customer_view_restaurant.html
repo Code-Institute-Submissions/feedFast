@@ -13,11 +13,13 @@
 </div>
 </div>
 </div>
-        <h3>Reservations</h3>
-       <div class="ReservationForm p-5 bg-dark">
-<div class="container-fluid"> 
+      
+<div class="ReservationForm p-5 bg-dark">
+<div class="container-fluid reservationSection"> 
+<h3  class="menuList">Reservations</h3>
 <div class="row">
     <div class="col-sm-6 ReservationFormSection">
+        <div class="card reservationCard">
         <h3>Book a new table</h3>
      <form method="POST" action="{% url 'book_table' restaurant.id %}}">
         {% csrf_token %}
@@ -25,29 +27,21 @@
         <input class="btn btn-default" type="submit" value="Submit"/>
     </form>
 </div>
+</div>
 
 <div class="col-sm-6 ReservationMadeSection">
+    <div class="card reservationCard">
 <h3>Your Upcoming Reservations</h3>
-<p>Number of guests: {{ user.guests }}</p>
+<p>Number of guests: {{ guests }}</p>
 <p>Time: {{ reservation_time }}</p>
 <p>Reservation date & time(dd/mm/yyyy): {{ reservation_date_day }}/{{ reservation_date_month }}/{{ reservation_date_year }}</p>
 </div>
-
-</div>    
-</div>    
 </div>
-
-
-
-
-<hr>
-
-<h3>Choose the menu you want to order from</h3>
+</div>
+<h3 class="menuList">Choose the menu you want to order from</h3>
 <br>
-<ul>
 {% for menu in menus %}
 {% if menu.restaurant.id == restaurant.id  %}
-<div class="container-fluid">
         <div class="row cardRow">
         <div class="col-lg-4 col-sm-4 col-xs-10 text-center">
             <div class="card restaurantMenu">
@@ -56,7 +50,13 @@
 	               <a class="btn btn-default postButton" href ="{% url 'get_customer_menu' restaurant.id menu.id %}">View Menu</a>
 	   </div>
 	   </div>
+	   </div>
 {% endif %}
 {% endfor %}
+
+</div>    
+</div>    
+</div>
+
 
 {% endblock content %}

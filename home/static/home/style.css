@@ -273,13 +273,26 @@ margin-top: 0px;
     height: 100px;
 }
 
-.ReservationFormSection, .ReservationMadeSection {
-    border: 2px solid blue;
-    padding-bottom: 20px;
-    padding-right: 20px;
-    padding-left: 20px;
+.reservationSection {
+    background-image: url(images/burrito-coffee.jpg);
+    padding: 20px 20px 20px 20px;
 }
 
+.reservationCard {
+    color: black;
+    background-color: white;
+    margin: 20px 20px 20px 20px;
+    padding: 20px 20px 20px 20px;
+    opacity: 0.8;
+}
+
+
 .restaurantMenu {
-    border: 2px solid gray;
+    opacity: 0.8;
+    margin-left: 20px;
+}
+
+.menuList {
+    color: white;
+    margin-left: 20px;
 }
