@@ -6,6 +6,8 @@ from .forms import UserRegistrationForm, CustomerRegistrationForm
 from django.contrib.auth.decorators import login_required
 from .models import Vendor, Customer
 from restaurants.models import Restaurant
+from checkout.models import Order
+from django.utils import timezone
 
 # Create your views here.
 def logout(request):
@@ -47,7 +49,9 @@ def profile_vendor(request):
 
 @login_required()
 def profile_customer(request):
-    return render(request, 'accounts/profile_customer.html')
+    reservations = Order.objects.filter(customer = request.user.customer, reservation_date__gte = timezone.now()).order_by("reservation_date", "reservation_time")
+    # reservations = Order.objects.filter(customer = request.user.customer)
+    return render(request, 'accounts/profile_customer.html', {'reservations': reservations})
     
     
 def register_vendor(request):
