@@ -82,24 +82,15 @@ margin-top: 0px;
     
 }
 
-.timeBadge {
-    background-color: red;
-    position: absolute;
-    font-size: 2rem;
-    margin: auto;
-	font-family: 'Karla', sans-serif;
-	margin-left: 180px;
-	border-radius: 50px;
-	padding: 10px 10px 10px 10px;
-}
-
 .badge-light {
     background-color: #55A1C5;
 }
     
-.cardPostPublish {
+.cardTag {
     font-size: 1.8rem;
     color: white;
+    background-color: black;
+    opacity: 0.6;
 }
 
 .btn-default {

@@ -32,22 +32,22 @@
 
 <br>
 <div class="container-fluid">
-    <div class="row">
+    <div class="row text-center">
         <h2 class="restaurantDisplayHeader">Restaurants</h2>
+          <p> Choose a restaurant, book a table and order your food.</p>
     </div>
 </div>
 <br>
     {% for restaurant in restaurants %}
     <div class="container-fluid">
         <div class="row cardRow">
-        <div class="col-lg-4 col-sm-4 col-xs-10 text-center">
+        <div class="col-lg-4 col-sm-4 col-xs-12 text-center">
             <div class="card restaurantCard" style="background-image:url({{ MEDIA_URL }}{{restaurant.image}})">
-                    <span class="badge timeBadge">10<br>mins</span>
                     <h3 class="cardTitle">{{ restaurant.name }}</h3>
                         <br>
                         <p><button class="btn btn-default postButton" onclick="location.href='{% url 'get_customer_view_restaurant' restaurant.id  %}'">View Menu</button></p>
                         <br>
-                        <p class="cardPostPublish">{{ restaurant.tag }}</p>
+                        <p class="cardTag">{{ restaurant.tag }}</p>
                     </div>
                     <br>
                     </div>
