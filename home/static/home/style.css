@@ -54,17 +54,10 @@ margin-top: 0px;
     margin-left: 110px;
     top: 30%; left: 0px; bottom: 0; right: 0;
 	font-family: 'Karla', sans-serif;
-    font-size: 4rem;
-   
 }
 
-.custom-search-input {
-    position: absolute;
-    margin: auto;
-    margin-left: 110px;
-    top: 400px; left: 0px; bottom: 0; right: 0;
-    padding-right: 10px;
-    margin-top: 40px;
+.tagLine {
+    font-size: 4rem;
 }
 
 .alert {
@@ -295,4 +288,16 @@ margin-top: 0px;
 .menuList {
     color: white;
     margin-left: 20px;
+}
+
+@media only screen and (max-width: 500px) {
+    .tagLine {
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .landingText {
+        margin-left: 20px;
+    }
 }

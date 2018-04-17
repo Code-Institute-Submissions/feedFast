@@ -11,10 +11,9 @@
     <div class="col-12">
     <div class="row">
     <img class="img-responsive banner"  src="{% static 'home/images/bread.jpg' %}"></img>
-    <p class="landingText">Book a table<br>Pre-order your food<br>Prepare to enjoy
-    <br>
-    <br>
-         <form action="{% url 'search' %}" role="search" class="custom-search-input">
+    <div class="landingText">
+    <p class="tagLine">Book a table<br>Pre-order your food<br>Prepare to enjoy</p>
+         <form action="{% url 'search' %}" role="search"  class="custom-search-input">
                 <span class="input-group col-md-4">
                     <input type="text" class="form-control input-lg" name="query" id="search" placeholder="Search for food, restaurants or locations" />
                     <span class="input-group-btn"> 
@@ -24,6 +23,7 @@
                     </span>
                 </span>
                 </form>
+                </div>
                 </div>
             </div>
         </div>
