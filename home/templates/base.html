@@ -12,8 +12,10 @@
     {% block head_style %}
     <link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+   <script src="//code.jquery.com/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{% static 'home/style.css' %}">
     {% endblock head_style %}
     
@@ -23,7 +25,9 @@
     <title>Ecommerce App</title>
 </head>
 <body>
+
     
+    <section class="Navbar">
     <nav class="navbar navbar-default navbar-masthead navbar-trans navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header navbar-left">
@@ -52,13 +56,13 @@
                     <li><a href="{% url 'register_customer' %}">Register Customer<i class="fa fa-user-plus"></i></a></li>
                     <li><a href="{% url 'login' %}">Log In <i class="fa fa-sign-in"></i></a></li>
                     {% endif %}
-                    <li><a href="{% url 'view_cart' %}">Cart <i class="fa fa-shopping-cart"></i><label class="badge badge-light">{{ items_in_cart }}</label></a></a></li>
-                    <li>       
-                  </li>
+                    <li><a href="{% url 'view_cart' %}">Cart <i class="fa fa-shopping-cart"></i><label class="badge badge-light">{{ items_in_cart }}</label></a></li>
+
                 </ul>
             </div>
-        </div>
+            </div>
     </nav>
+    </section>
     
     
     {% if messages %}
