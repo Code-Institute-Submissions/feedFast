@@ -1,3 +1,4 @@
+/*General style rules*/
 body {
     font-family: 'Work Sans', sans-serif;
     padding-top: 50px;
@@ -9,9 +10,16 @@ p {
     font-size: 1.8rem;
 }
 
-a {
+a, h4 {
     color: #55A1C5;
 }
+
+#Footer {
+    background-color: #55A1C5;
+    color: white;
+}
+
+
 
 
 .banner {
@@ -134,10 +142,6 @@ margin-top: 0px;
   
 }
 
-.statCard{
-    opacity: 0.8;
-    background: white;
-}
 
 .newRestaurant {
     font-size: 1.5rem;
@@ -149,6 +153,10 @@ margin-top: 0px;
 
 .vendorProfileStats {
     font-size: 1.5rem;
+}
+
+.vendormenuCard, .statCard {
+    border: 2px solid #55A1C5;
 }
 
 .cardTitle{
@@ -191,6 +199,15 @@ margin-top: 0px;
     font-size: 1.2rem;
     margin-left: 20px;
     background-color: #99ADAC;
+    border-color: #99ADAC;
+    color: white;
+}
+
+.deleteButton {
+    font-size: 1.2rem;
+    margin-left: 20px;
+    background-color: gray;
+    border-color: gray;
     color: white;
 }
 

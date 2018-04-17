@@ -1,5 +1,4 @@
 $(function() {
-  alert('I am here')
     $("#payment-form").submit(function() {
       var form = this;
       var card = {
@@ -12,7 +11,7 @@ $(function() {
 
 
     Stripe.createToken(card, function(status, response) {
-      alert(status);
+      alert("Verifying your payment");
         if (status === 200) {
           $("#credit-card-errors").hide();
           $("#id_stripe_id").val(response.id);
