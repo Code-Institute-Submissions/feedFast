@@ -4,11 +4,10 @@
 <div class="loginPage p-5 bg-dark">
 <div class="container-fluid"> 
 <div class="row">
-<div class="col-sm-12 loginHeader">
+<div class="col-sm-12 loginHeader text-center">
     <br>
     <h1>Login</h1>
     </div>
-    <br>
 <div class="col-sm-6 col-xs-12 col-sm-offset-3">
     <form role="form" method="post" class="loginForm">
         {% csrf_token %}
@@ -23,11 +22,5 @@
     </div>
     </div>
     </div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-4">
-                <img src="./home/static/home/images/cereal.jpeg"></img>
-            </div>
-        </div>
-    </div>
+    
 {% endblock %}

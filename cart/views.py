@@ -4,6 +4,7 @@ from decimal import Decimal
 from cart.utils import get_cart_items_and_total
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
+from django.contrib.auth.decorators import login_required
 
 
 def view_cart(request):
@@ -11,16 +12,16 @@ def view_cart(request):
     context = get_cart_items_and_total(cart)
     
     booking = {'guests': request.session.get('guests', 0),
-                    'reservation_date_day': request.session.get('reservation_date_day', timezone.now()),
-                    'reservation_date_month': request.session.get('reservation_date_month', timezone.now()),
-                    'reservation_date_year': request.session.get('reservation_date_year', timezone.now()),
-                    'reservation_time': request.session.get('reservation_time', timezone.now())
+                    'reservation_date_day': request.session.get('reservation_date_day', 0),
+                    'reservation_date_month': request.session.get('reservation_date_month', 0),
+                    'reservation_date_year': request.session.get('reservation_date_year', 0),
+                    'reservation_time': request.session.get('reservation_time', 0)
         }
+   
     context.update(booking)
-        
     return render(request, "cart/view_cart.html", context)
- 
-
+    
+@login_required()
 def add_to_cart(request):
     id = request.POST['id']
     quantity = int(request.POST['quantity'])

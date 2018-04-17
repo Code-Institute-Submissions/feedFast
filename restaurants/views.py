@@ -110,6 +110,7 @@ def search_restaurants(request):
     restaurants = Restaurant.objects.filter(name__icontains=request.GET['query'])
     return render(request, "restaurant_page.html", {"restaurants": restaurants})
 
+@login_required()
 def book_table(request, restaurant_id): 
     restaurant = get_object_or_404(Restaurant, pk=restaurant_id)
     if request.method == "POST":
@@ -122,7 +123,7 @@ def book_table(request, restaurant_id):
             request.session['reservation_date_year'] = request.POST['reservation_date_year']
             request.session['reservation_time'] = request.POST['reservation_time']
             
-            messages.success(request, " 🍴  Great News, you've made a reservation! 🍴 ")
+            messages.success(request, " 🍴  Great News, your reservation request has been saved. Order your meals and checkout to confirm 🍴 ")
         
         else:
             print( form.errors )

@@ -1,17 +1,12 @@
-{% extends "base.html" %}
-
-{% block content %}
+{% extends "base.html" %} {% block content %}
 
 
 <h3 class="cartWelcome">Hi {{ user }}, welcome to your basket <br><br> <i class="fa fa-cutlery"></i> <i class="fa fa-heart"></i></h3>
-<h4>Your Reservation Details</h4>
+<h4>Your Reservation Request Details</h4>
+
 <p>Number of guests: {{ guests }}</p>
 <p>Time: {{ reservation_time }}</p>
 <p>Reservation date & time(dd/mm/yyyy): {{ reservation_date_day }}/{{ reservation_date_month }}/{{ reservation_date_year }}</p>
-<br>
+<br> {% include 'cart/_show_cart.html' %}
 
-{% include 'cart/_show_cart.html' %}
-
-<a href="{% url 'checkout' %}" type="button" class="checkout btn btn-default" role="button">Checkout</a>
-
-{% endblock content %}
+<a href="{% url 'checkout' %}" type="button" class="checkout btn btn-default" role="button">Checkout</a> {% endblock content %}
