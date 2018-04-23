@@ -3,54 +3,33 @@
 
 {% block content %}
 <br>
-<div class="container-fluid">
+<div class="container-fluid customerProfileIntro">
         <div class="row">
-<p>Hi {{ user }}, welcome to your profile.</p>
-</div>
-</div>
+<p>Hi {{ user }}, welcome to your profile <i class="fa fa-heart"></i></p>
 <br>
- <div class="container-fluid">
-        <div class="row">
 <p class="customerProfileExp">At FeedFast we believe you shoulnd't have to wait long for great food. In 5 simple steps you can eat in restaurants without the wait time.<br> #Hangry, I don't think so
 </p>
 </div>
 </div>
 
-    <div class="container-fluid">
+    <div class="container-fluid customerProfileSteps">
         <div class="row">
-        <div class="col-xs-10 col-sm-8 col-lg-8">
+        <div class="col-xs-10 col-sm-6 col-lg-6">
     <h3>How Does It Work</h3>
-    <p>1. First things first,  <a href="https://wolfenchic-feed-fast.herokuapp.com/accounts/register/customer/">register</a> or <a href="https://wolfenchic-feed-fast.herokuapp.com/accounts/login/">login.</a><br> 
-    </div>
-    <br>
-    <div class="col-xs-10 col-sm-8 col-lg-8">
-    <p>2. Choose a restaurant. Check out our exciting range of <a href="https://wolfenchic-feed-fast.herokuapp.com/restaurants/">restaurants here.</a></p>
-    </div>
-    <br>
-    <div class="col-xs-10 col-sm-8 col-lg-8">
-    <p>3. Once you know what restaurant you're going to book a table.</p> 
-    </div>
-    <br>
-    <div class="col-xs-10 col-sm-8 col-lg-8">
-    <p>4. Choose the menu that's right for you. e.g. Early Bird, Set Menu, Lunch Menu etc.</p> 
-    </div>
-    <br>
-    <div class="col-xs-10 col-sm-8 col-lg-8">
-    <p>5. What do you fancy eating? Choose a dish from the range displayed on your chosen menu</p> 
-    </div>
-    <br>
-    <div class="col-xs-10 col-sm-8 col-lg-8">
-    <p>6. Pre-order and pre-pray for you food.</p> 
+    <ol>
+    <li> First things first,  <a href="https://wolfenchic-feed-fast.herokuapp.com/accounts/register/customer/">register</a> or <a href="https://wolfenchic-feed-fast.herokuapp.com/accounts/login/">login.</a><br></li> 
+    <li> Choose a restaurant. Check out our exciting range of <a href="https://wolfenchic-feed-fast.herokuapp.com/restaurants/">restaurants here.</a></li>
+    <li> Once you know what restaurant you're going to book a table.</li> 
+    <li> Choose the menu that's right for you. e.g. Early Bird, Set Menu, Lunch Menu etc.</li> 
+    <li> What do you fancy eating? Choose a dish from the range displayed on your chosen menu</li> 
+    <li> Pre-order and pre-pray for you food.</li> 
+    </ol>
+     <p> Arrive on time and enjoy a hassle free, wait free dining experience.</p>
     </div>
     </div>
   </div>
   <br>
-    <div class="container-fluid">
-        <div class="row">
-    <p> Arrive on time and enjoy a hassle free, wait free dining experience.</p> 
-    </div>
-    </div>
-<br>  
+    
 
 {% for reservation in reservations %}
 <div class="row">

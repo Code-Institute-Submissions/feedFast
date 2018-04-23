@@ -8,5 +8,5 @@ STATIC_ROOT='staticfiles'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = 'media'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-SYSTEM_EMAIL = 'wolfe.nichola@gmail.com'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+SYSTEM_EMAIL="anyemail"

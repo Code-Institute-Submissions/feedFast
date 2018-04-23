@@ -6,8 +6,9 @@ body {
     margin-left: 20px;
     }
 
-p {
+p, li {
     font-size: 1.8rem;
+    line-height: 30px;
 }
 
 a, h4 {
@@ -111,6 +112,7 @@ margin-top: 0px;
     padding: 20px 10px 20px 10px;
 }
 
+/**************CustomerProfile**************/
 .customerProfileCard {
     background-color: white;
     padding: 20px 10px 20px 10px;
@@ -127,6 +129,18 @@ margin-top: 0px;
 	font-family: 'Karla', sans-serif;
     font-size: 4rem;
     opacity: 1.0;
+}
+
+.customerProfileIntro {
+    padding: 20px 20px 20px 20px;
+    background-color: #55A1C5;
+    color: white;
+    text-align: center;
+}
+
+.customerProfileSteps {
+    background-color: #92CCE0; 
+    color: white;
 }
 
 
@@ -175,14 +189,7 @@ margin-top: 0px;
     color: white;
 }
 
-.regPage {
-    background-image: url(images/burrito-coffee.jpg);
-    background-size: cover;
-    font-size: 1.5rem;
-    color: white;
-    padding-bottom: 40px;
-    
-}
+
 
 .dashButton {
   font-size: 1.8rem;
@@ -219,14 +226,39 @@ margin-top: 0px;
     text-align: center;
 }
 
+/*******Regform********/
+
+.regPage {
+    background-image: url(images/burrito-coffee.jpg);
+    background-size: cover;
+    font-size: 1.5rem;
+    color: white;
+    padding-bottom: 40px;
+}
+
+.regFormDiv {
+    margin-top: 50px;
+}
 .regForm {
     padding: 80px 80px 80px 80px;
     text-align: center;
     border: 2px solid white;
     background-image: inherit;
     opacity: none;
+    color: black;
+    background-color: #92CCE0;
+    opacity: 0.8;
+}
+.regHeader {
+    color: white;
 }
 
+.registerButton {
+    background-color: #08325C;
+    border-color: #08325C;
+}
+
+/*************END REG*******************/
 .loginForm {
     padding: 80px 80px 80px 80px;
     text-align: center;
