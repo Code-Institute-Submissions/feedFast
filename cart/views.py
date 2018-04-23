@@ -7,6 +7,7 @@ from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 
 
+
 def view_cart(request):
     cart = request.session.get('cart', {})
     context = get_cart_items_and_total(cart)
