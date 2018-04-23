@@ -4,9 +4,6 @@ from decimal import Decimal
 from cart.utils import get_cart_items_and_total
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
-from django.contrib.auth.decorators import login_required
-
-
 
 def view_cart(request):
     cart = request.session.get('cart', {})

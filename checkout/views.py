@@ -9,9 +9,9 @@ from .models import OrderLineItem
 from django.conf import settings
 import stripe
 from django.contrib import messages
+from cart.utils import get_cart_items_and_total
 from restaurants.forms import ReservationForm
 import datetime 
-from .utils import save_order_items, charge_card, send_confirmation_email
 
 stripe.api_key = settings.STRIPE_SECRET
 # Create your views here.
@@ -42,12 +42,14 @@ def checkout(request):
                 quantity = quantity
                 )
             order_line_item.save()
+        print("did cart stuff")
         
         # Charge the Card
         payment_form = MakePaymentForm(request.POST)
+        print("In charge card section")
         if payment_form.is_valid():
-            items_and_total = get_cart_items_and_total(cart)
-            total = items_and_total['total']
+            print("Form valid section")
+            total = get_cart_items_and_total(cart)['total']
             total_in_cent = int(total*100)
             try:
                 customer = stripe.Charge.create(
@@ -58,9 +60,6 @@ def checkout(request):
                 )
                 if customer.paid:
                     messages.error(request, "You have successfully paid")
-                    
-                    send_confirmation_email(request.user.email, request.user, items_and_total)
-            
             except stripe.error.CardError:
                 messages.error(request, "Your card was declined!")
                 

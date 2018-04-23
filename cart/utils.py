@@ -2,7 +2,6 @@ from django.shortcuts import get_object_or_404
 from restaurants.models import Restaurant, Menu, Menu_item
 from decimal import Decimal
 
-
 def get_cart_items_and_total(cart):
 
     cart_items = []
@@ -24,4 +23,4 @@ def get_cart_items_and_total(cart):
 
     return { 'cart_items': cart_items, 'total': total }
     
-
+    
