@@ -21,6 +21,7 @@ a, h4 {
     opacity: 0.8;
 }
 
+/*Nav & Landing section */
 .banner {
             background-size: cover;
             width: 100%;
@@ -44,6 +45,7 @@ a, h4 {
     border-color: #6EC1C8;
 }
 
+
 #landingImage {
 position: relative;
 text-align: left;
@@ -61,6 +63,7 @@ margin-top: 0px;
     margin-left: 110px;
     top: 30%; left: 0px; bottom: 0; right: 0;
 	font-family: 'Karla', sans-serif;
+	line-height: 1.6;
 }
 
 .tagLine {
@@ -74,25 +77,25 @@ margin-top: 0px;
     text-align: center;
 }
 
+.glyphicon-search {
+    color: gray;
+}
+
 .btn-info {
     background-color: white;
     border-color: gray;
 }
 
-.glyphicon-search {
-    color: gray;
-}
-
-
-.cardText {
-    font-size: 1.8rem;
-    
-}
-
 .badge-light {
     background-color: #55A1C5;
 }
-    
+
+/*Homepage styling */
+
+.cardText {
+    font-size: 1.8rem;
+}
+
 .cardTag {
     font-size: 1.8rem;
     color: white;
@@ -110,120 +113,6 @@ margin-top: 0px;
 .card {
     background-color: white;
     padding: 20px 10px 20px 10px;
-}
-
-/**************CustomerProfile**************/
-.customerProfileCard {
-    background-color: white;
-    padding: 20px 10px 20px 10px;
-    position: relative;
-    color: white;
-}
-
-.customerProfileCardText {
-    position: absolute;
-    margin: auto;
-    top: 30%; left: 0px; bottom: 0; right: 0;
-    margin-left: 20px;
-    margin-right: 20px;
-	font-family: 'Karla', sans-serif;
-    font-size: 4rem;
-    opacity: 1.0;
-}
-
-.customerProfileIntro {
-    padding: 20px 20px 20px 20px;
-    background-color: #55A1C5;
-    color: white;
-    text-align: center;
-}
-
-.customerProfileSteps {
-    background-color: #92CCE0; 
-    color: white;
-}
-
-
-.dashboardCard {
-    background-color: white;
-    margin-top: 20px;
-}
-
-.statViewsCard {
-    font-size: 2rem;
-  
-}
-
-
-.newRestaurant {
-    font-size: 1.5rem;
-}
-
-.vendorProfileRestaurants {
-    font-size: 1.5rem;
-}
-
-.vendorProfileStats {
-    font-size: 1.5rem;
-}
-
-.vendormenuCard, .statCard {
-    border: 2px solid #55A1C5;
-}
-
-.cardTitle{
-    color: white;
-    text-align: center;
-    font-size: 4rem;
-    vertical-align: middle;
-}
-
-.vendorWelcome {
-    text-align: center;
-}
-
-.addItemForm {
-    background-image: url(images/menu.jpeg);
-    background-size: cover;
-    font-size: 1.5rem;
-    color: white;
-}
-
-
-
-.dashButton {
-  font-size: 1.8rem;
-    margin-left: 20px;
-    background-color: white;
-    font-size: 1.7rem;
-    color: green;
-    margin-top: 20px;
-}
-
-.editButton {
-    font-size: 1.2rem;
-    margin-left: 20px;
-    background-color: #55A1C5;
-    border-color: #55A1C5;
-    color: white;
-}
-
-.deleteButton {
-    font-size: 1.2rem;
-    margin-left: 20px;
-    background-color: gray;
-    border-color: gray;
-    color: white;
-}
-
-.menuListItem {
-    line-height: 3;
-    font-size: 1.7rem;
-}
-
-.addItemForm {
-    padding-bottom: 20px;
-    text-align: center;
 }
 
 /*******Regform********/
@@ -259,6 +148,122 @@ margin-top: 0px;
 }
 
 /*************END REG*******************/
+
+/*CustomerProfile*/
+.customerProfileCard {
+    background-color: white;
+    padding: 20px 10px 20px 10px;
+    position: relative;
+    color: white;
+}
+
+.customerProfileCardText {
+    position: absolute;
+    margin: auto;
+    top: 30%; left: 0px; bottom: 0; right: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+	font-family: 'Karla', sans-serif;
+    font-size: 4rem;
+    opacity: 1.0;
+}
+
+.customerProfileIntro {
+    padding: 20px 20px 20px 20px;
+    background-color: #55A1C5;
+    color: white;
+    text-align: center;
+}
+
+.customerProfileSteps {
+    background-color: #92CCE0; 
+    color: white;
+}
+/*End customer profile*/
+
+/*Vendor profile*/
+.dashboardCard {
+    background-color: white;
+    margin-top: 20px;
+}
+
+.statViewsCard {
+    font-size: 2rem;
+}
+
+.newRestaurant {
+    font-size: 1.5rem;
+}
+
+.vendorProfileRestaurants {
+    font-size: 1.5rem;
+}
+
+.vendorProfileStats {
+    font-size: 1.5rem;
+}
+
+.vendormenuCard, .statCard {
+    border: 2px solid #55A1C5;
+}
+
+.cardTitle{
+    color: white;
+    text-align: center;
+    font-size: 4rem;
+    vertical-align: middle;
+}
+
+.vendorWelcome {
+    text-align: center;
+}
+
+.dashButton {
+  font-size: 1.8rem;
+    margin-left: 20px;
+    background-color: white;
+    font-size: 1.7rem;
+    color: green;
+    margin-top: 20px;
+}
+/*End vendor profile*/
+
+/*Vendor functionality*/
+
+.addItemForm {
+    background-image: url(images/menu.jpeg);
+    background-size: cover;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.editButton, .add-to-cart {
+    font-size: 1.2rem;
+    margin-left: 20px;
+    background-color: #55A1C5;
+    border-color: #55A1C5;
+    color: white;
+}
+
+.deleteButton {
+    font-size: 1.2rem;
+    margin-left: 20px;
+    background-color: gray;
+    border-color: gray;
+    color: white;
+}
+
+.menuListItem {
+    line-height: 3;
+    font-size: 1.7rem;
+}
+
+.addItemForm {
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+
 .loginForm {
     padding: 80px 80px 80px 80px;
     text-align: center;
@@ -283,7 +288,9 @@ margin-top: 0px;
 .restaurantDisplayHeader, .regHeader{
     text-align: center;
 }
+/*End vendor functionality*/
 
+/*Cart*/
 .cartWelcome{
   color: black;
   margin-top: 50px;
@@ -304,19 +311,26 @@ margin-top: 0px;
     height: 100px;
 }
 
-.reservationSection {
-    background-image: url(images/burrito-coffee.jpg);
-    padding: 20px 20px 20px 20px;
-}
-
 .reservationCard {
     color: black;
     background-color: white;
     margin: 20px 20px 20px 20px;
     padding: 20px 20px 20px 20px;
-    opacity: 0.8;
+    border-color: #55A1C5;
 }
 
+.reservationTime {
+    font-size: 1.2rem;
+    color: #55A1C5;
+}
+
+/*End Cart*/
+
+/*Make reservation */
+.reservationSection {
+    background-image: url(images/burrito-coffee.jpg);
+    padding: 20px 20px 20px 20px;
+}
 
 .restaurantMenu {
     opacity: 0.8;
@@ -327,6 +341,9 @@ margin-top: 0px;
     color: white;
     margin-left: 20px;
 }
+
+/*End make reservation*/
+
 .footerSignature {
     color: white;
 }

@@ -66,27 +66,26 @@ def checkout(request):
                 messages.error(request, "Your card was declined!")  
         
         if customer.paid:
-                messages.error(request, "You have successfully paid")
-                
+            print
                 # Send Email
-                context = {
-                    'site_name': "FeeFast.com",
-                    'user': request.user,
-                }
-                context.update(items_and_total)
-                message = render_to_string('checkout/text_confirmation_email.html', context)
-                html_message = render_to_string('checkout/html_confirmation_email.html', context)
+                # context = {
+                #     'site_name': "Blah Blah dot com",
+                #     'user': request.user,
+                # }
+                # context.update(items_and_total)
+                # message = render_to_string('checkout/text_confirmation_email.html', context)
+                # html_message = render_to_string('checkout/html_confirmation_email.html', context)
                 
-                subject = 'Thanks for buying our stuff!'
-                message = message
-                from_email = settings.SYSTEM_EMAIL
-                to_email = [request.user.email]
+                # subject = 'Thanks for buying our stuff!'
+                # message = message
+                # from_email = settings.SYSTEM_EMAIL
+                # to_email = [request.user.email]
     
-                send_mail(subject,message,from_email,to_email,fail_silently=True,html_message=html_message)
+                # send_mail(subject,message,from_email,to_email,fail_silently=True,html_message=html_message)
                 
                 #Clear the Cart
                 # del request.session['cart']
-                return render(request, 'home.html')
+                return redirect("home")
 
 
     else:

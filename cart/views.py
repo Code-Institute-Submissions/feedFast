@@ -4,6 +4,7 @@ from decimal import Decimal
 from cart.utils import get_cart_items_and_total
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
+from checkout.models import Order, OrderLineItem
 
 def view_cart(request):
     cart = request.session.get('cart', {})
@@ -29,8 +30,11 @@ def add_to_cart(request):
     request.session['cart'] = cart
     
     menu_item = get_object_or_404(Menu_item, pk=id)
+    order = get_object_or_404(Order, pk=id)
     menu = menu_item.menu
     restaurant = menu.restaurant
+    # order = customer.order.restaurant
+   
     return redirect(reverse('get_customer_menu', args=(restaurant.id, menu.id)))
     
     

@@ -21,6 +21,7 @@
     <div class="col-sm-6 sm-offset-3 ReservationFormSection">
         <div class="card reservationCard">
         <h3>Book a new table</h3>
+        <p class="reservationTime">*Input the desired time of your booking in 24hr format e.g. 20:00*</p>
      <form method="POST" action="{% url 'book_table' restaurant.id %}}">
         {% csrf_token %}
         {{ form | as_bootstrap }}
@@ -39,16 +40,14 @@
             <div class="card restaurantMenu">
 	            <h3>{{ menu.name }}<h3>
 	               
-	               <a class="btn btn-default postButton" href ="{% url 'get_customer_menu' restaurant.id menu.id %}">View Menu</a>
+	               <a class="btn btn-default postButtonJ" href ="{% url 'get_customer_menu' restaurant.id menu.id %}">View Menu</a>
 	   </div>
 	   </div>
-	  
 {% endif %}
 {% endfor %}
 
 </div>    
 </div>    
 </div>
-
 
 {% endblock content %}
