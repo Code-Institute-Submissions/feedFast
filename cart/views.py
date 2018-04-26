@@ -30,10 +30,9 @@ def add_to_cart(request):
     request.session['cart'] = cart
     
     menu_item = get_object_or_404(Menu_item, pk=id)
-    order = get_object_or_404(Order, pk=id)
     menu = menu_item.menu
     restaurant = menu.restaurant
-    # order = customer.order.restaurant
+   
    
     return redirect(reverse('get_customer_menu', args=(restaurant.id, menu.id)))
     
