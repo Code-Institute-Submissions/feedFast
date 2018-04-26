@@ -6,9 +6,13 @@ body {
     margin-left: 20px;
     }
 
-p, li {
+p{
     font-size: 1.8rem;
-    line-height: 30px;
+}
+
+li { 
+    font-size: 1.8rem;
+    line-height: 1.8;
 }
 
 a, h4 {
@@ -63,7 +67,10 @@ margin-top: 0px;
     margin-left: 110px;
     top: 30%; left: 0px; bottom: 0; right: 0;
 	font-family: 'Karla', sans-serif;
-	line-height: 1.6;
+}
+
+.tagline {
+    line-height: 1.5;
 }
 
 .tagLine {
@@ -357,6 +364,7 @@ margin-top: 0px;
 @media only screen and (max-width: 500px) {
     .landingText {
         margin-left: 20px;
+        
     }
 }
 
