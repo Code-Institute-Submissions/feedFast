@@ -64,7 +64,7 @@ position: relative;
 text-align: left;
 color: white;
 margin-top: 0px;
--webkit-filter: hue-rotate(325deg) brightness(110%);
+/*-webkit-filter: hue-rotate(325deg) brightness(110%);*/
 
 }
 
