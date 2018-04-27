@@ -9,7 +9,7 @@ def view_cart(request):
     cart = request.session.get('cart', {})
     context = get_cart_items_and_total(cart)
     
-    booking = {'guests': request.session.get('guests', 0),
+    booking = {'guests': request.session.get('guests', "Looks like you haven't made a reservation yet"),
                     'reservation_date_day': request.session.get('reservation_date_day', 0),
                     'reservation_date_month': request.session.get('reservation_date_month', 0),
                     'reservation_date_year': request.session.get('reservation_date_year', 0),

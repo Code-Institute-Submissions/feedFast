@@ -14,13 +14,9 @@ from restaurants.forms import ReservationForm
 import datetime 
 
 stripe.api_key = settings.STRIPE_SECRET
-# Create your views here.
 def checkout(request):
-    print("**** Enter checkout ***")
     print(request.method)
     if request.method=="POST":
-        print("you are posting - great")
-        # Save The Order
         order_form = OrderForm(request.POST)
         order = order_form.save(commit=False)
         y = int(request.session['reservation_date_year'])
@@ -32,7 +28,6 @@ def checkout(request):
         order.customer = request.user.customer
         order.save()
         
-        # Save the Order Line Items
         cart = request.session.get('cart', {})
         for id, quantity in cart.items():
             menu_item = get_object_or_404(Menu_item, pk=id)
@@ -42,11 +37,8 @@ def checkout(request):
                 quantity = quantity
                 )
             order_line_item.save()
-        print("did cart stuff")
         
-        # Charge the Card
         payment_form = MakePaymentForm(request.POST)
-        print("In charge card section")
         if payment_form.is_valid():
             total = get_cart_items_and_total(cart)['total']
             total_in_cent = int(total*100)

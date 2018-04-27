@@ -7,7 +7,12 @@
 <p>Number of guests: {{ guests }}</p>
 <p>Time: {{ reservation_time }}</p>
 <p>Reservation date & time(dd/mm/yyyy): {{ reservation_date_day }}/{{ reservation_date_month }}/{{ reservation_date_year }}</p>
-<br> {% include 'cart/_show_cart.html' %}
+ <a class="btn btn-default" href ="{% url 'restaurants' %}">Make Reservation</a>
+<br> 
+<br>
+{% include 'cart/_show_cart.html' %}
 
 
-<a href="{% url 'checkout' %}" type="button" class="checkout btn btn-default pull-right" role="button">Checkout</a> {% endblock content %}
+<a href="{% url 'checkout' %}" type="button" class="checkout btn btn-default pull-right" role="button">Checkout</a> 
+
+{% endblock content %}

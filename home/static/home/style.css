@@ -16,13 +16,22 @@ li {
 }
 
 a, h4, h3 {
-    color: #55A1C5;
+   
+   color: #5EC5C4;
 }
 
 #Footer {
-    background-color: #55A1C5;
-    color: white;
-    opacity: 0.8;
+    background-color: white;
+    color: #4a4a4f;
+    left:0px;
+    bottom:0px;
+    height:20px;
+    width:100%;
+}
+
+.footerSignature {
+    color: #5EC5C4;
+    background-color: white;
 }
 
 /*Nav & Landing section */
@@ -55,6 +64,8 @@ position: relative;
 text-align: left;
 color: white;
 margin-top: 0px;
+-webkit-filter: hue-rotate(325deg) brightness(110%);
+
 }
 
 .restaurantCard {
@@ -94,7 +105,7 @@ margin-top: 0px;
 }
 
 .badge-light {
-    background-color: #55A1C5;
+    background-color: #5EC5C4;
 }
 
 /*Homepage styling */
@@ -112,9 +123,9 @@ margin-top: 0px;
 
 .btn-default {
     font-size: 1.5rem;
-    background: #55A1C5;
+    background: #5EC5C4;
     color: white;
-    border-color: #55A1C5;
+    border-color: #5EC5C4;
 }
 
 .card {
@@ -142,7 +153,7 @@ margin-top: 0px;
     background-image: inherit;
     opacity: none;
     color: black;
-    background-color: #92CCE0;
+    background-color: #88c1c0;
     opacity: 0.8;
 }
 .regHeader {
@@ -208,7 +219,7 @@ margin-top: 0px;
 }
 
 .vendormenuCard, .statCard {
-    border: 2px solid #55A1C5;
+    border: 2px solid #5EC5C4;
 }
 
 .cardTitle{
@@ -244,8 +255,8 @@ margin-top: 0px;
 .editButton, .add-to-cart {
     font-size: 1.2rem;
     margin-left: 20px;
-    background-color: #55A1C5;
-    border-color: #55A1C5;
+    background-color: #5EC5C4;
+    border-color: #5EC5C4;
     color: white;
 }
 
@@ -302,7 +313,7 @@ margin-top: 0px;
 }
 
 .table thead th { 
-  background-color: #55A1C5;
+  background-color: #5EC5C4;
   color: white;
   font-weight: bold;
   font-size: 1.5rem;
@@ -320,12 +331,12 @@ margin-top: 0px;
     background-color: white;
     margin: 20px 20px 20px 20px;
     padding: 20px 20px 20px 20px;
-    border-color: #55A1C5;
+    border-color: #5EC5C4;
 }
 
 .reservationTime {
     font-size: 1.2rem;
-    color: #55A1C5;
+    color: #5EC5C4;
 }
 
 /*End Cart*/
@@ -347,10 +358,6 @@ margin-top: 0px;
 }
 
 /*End make reservation*/
-
-.footerSignature {
-    color: white;
-}
 
 @media only screen and (max-width: 500px) {
     .tagLine {
