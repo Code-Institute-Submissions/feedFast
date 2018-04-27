@@ -11,27 +11,77 @@
 </p>
 </div>
 </div>
+<br>
+<hr>
 
-    <div class="container-fluid customerProfileSteps">
-        <div class="row">
-        <div class="col-xs-10 col-sm-6 col-lg-6">
-    <h3>How Does It Work</h3>
-    <ol>
-    <li> First things first,  <a href="https://wolfenchic-feed-fast.herokuapp.com/accounts/register/customer/">register</a> or <a href="https://wolfenchic-feed-fast.herokuapp.com/accounts/login/">login.</a><br></li> 
-    <li> Choose a restaurant. Check out our exciting range of <a href="https://wolfenchic-feed-fast.herokuapp.com/restaurants/">restaurants here.</a></li>
-    <li> Once you know what restaurant you're going to book a table.</li> 
-    <li> Choose the menu that's right for you. e.g. Early Bird, Set Menu, Lunch Menu etc.</li> 
-    <li> What do you fancy eating? Choose a dish from the range displayed on your chosen menu</li> 
-    <li> Pre-order and pre-pray for you food.</li> 
-    </ol>
-     <p> Arrive on time and enjoy a hassle free, wait free dining experience.</p>
-    </div>
-    </div>
-  </div>
-  <br>
+<div class="container-fluid text-center">
+                    <div class="row howToRow text-center">
+                    <h3>How To Use FeedFast</h3>
+                    <br>
+                     <div class="col-lg-3 col-sm-3 col-xs-10 text-center">
+                                <div class="card howToCard">
+                                <i class="fa fa-user fa-3x" aria-hidden="true"></i>
+                                <br>
+                                <br>
+                                <p>First things first,  <a href="https://wolfenchic-feed-fast.herokuapp.com/accounts/register/customer/">register</a> or <a href="https://wolfenchic-feed-fast.herokuapp.com/accounts/login/">login.</a><p>
+                                </div>
+                                </div>
+                                
+                    <div class="col-lg-3 col-sm-3 col-xs-10 text-center">
+                        <div class="card howToCard">
+                                    <span><i class="fa fa-cutlery fa-3x"></i></span>
+                                    <br>
+                                    <br>
+                                    <p>Choose a restaurant. Check out our exciting range of <a href="https://wolfenchic-feed-fast.herokuapp.com/restaurants/">restaurants here.</a></p>
+                                </div>
+                                </div>
+                              
+                                <div class="col-lg-3 col-sm-3 col-xs-10 text-center">
+                                <div class="card howToCard">
+                                    <i class="fa fa-book fa-3x" aria-hidden="true"></i>
+                                    <br>
+                                    <br>
+                                    <p>Once you know what restaurant you're going to book a table.</p>
+                                </div>
+                                </div>
+                                
+                                <div class="col-lg-3 col-sm-3 col-xs-10 text-center">
+                                <div class="card howToCard">
+                                    <i class="fa fa-check fa-3x" aria-hidden="true"></i>
+                                    <br>
+                                    <br>
+                                    <p>Choose the menu that's right for you. e.g. Early Bird, Set Menu, Lunch Menu etc.</p>
+                                </div>
+                                </div>
+                                
+                                <div class="col-lg-3 col-sm-3 col-xs-10 col-sm-offset-3 text-center">
+                                <div class="card howToCard">
+                                    <i class="fa fa-shopping-cart fa-3x" aria-hidden="true"></i>
+                                    <br>
+                                    <br>
+                                    <p>What do you fancy eating? Choose a dish from the range displayed on your chosen menu</p>
+                                </div>
+                                </div>
+                                
+                                 <div class="col-lg-3 col-sm-3 col-xs-10 text-center">
+                                <div class="card howToCard">
+                                    <i class="fa fa-credit-card fa-3x" aria-hidden="true"></i>
+                                    <br>
+                                    <br>
+                                    <p>Pre-order and pre-pray for you food.</p>
+                                </div>
+                                </div>
+                                </div>
+                                <br>
+                                <h4>Arrive on time and enjoy a hassle free, wait free dining experience.</h4>
+                                <br>
+                                </div>
+                                </div>
+        <hr>
     
 
 {% for reservation in reservations %}
+<div class="container">
 <div class="row">
 <div class="col-sm-3 ReservationMadeSection">
     <div class="card reservationCard">
@@ -42,6 +92,8 @@
 </div>
 </div>
 {% endfor %}
+</div>
+</div>
 
 <div class="container-fluid">
     <div class="row">
@@ -61,9 +113,9 @@
         </div>
         <div class="col-lg-4 col-sm-4 col-xs-12 text-center mb-3">
             <div class="card customerProfileCard">
-                <img class="img-responsive" src="{% static 'home/images/friends.jpg' %}"></img>
+                <img class="img-responsive" src="{% static 'home/images/dessert.jpeg' %}"></img>
                 <br>
-                <p class="customerProfileCardText">More time for laughs</p>
+                <p class="customerProfileCardText">More time for dessert</p>
 
             </div>
         </div>

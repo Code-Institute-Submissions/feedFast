@@ -134,9 +134,3 @@ MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 STRIPE_PUBLISHABLE_KEY = os.getenv('STRIPE_PUBLISHABLE_KEY')
 STRIPE_SECRET = os.getenv('STRIPE_SECRET_KEY')
 
-EMAIL_HOST = 'smtp.sendgrid.net'  
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD') 
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-EMAIL_PORT = 587    
-EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER

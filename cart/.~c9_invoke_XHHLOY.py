@@ -4,13 +4,14 @@ from decimal import Decimal
 from cart.utils import get_cart_items_and_total
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
+from checkout.models import Order, OrderLineItem
 
 def view_cart(request):
     cart = request.session.get('cart', {})
     context = get_cart_items_and_total(cart)
     
     booking = {'guests': request.session.get('guests', 0),
-                    'reservation_date_day': request.session.get('reservation_date_day', 0),
+                    'reservation_date_day': request.session.get('reservation_date_day', ),
                     'reservation_date_month': request.session.get('reservation_date_month', 0),
                     'reservation_date_year': request.session.get('reservation_date_year', 0),
                     'reservation_time': request.session.get('reservation_time', 0)
@@ -31,6 +32,8 @@ def add_to_cart(request):
     menu_item = get_object_or_404(Menu_item, pk=id)
     menu = menu_item.menu
     restaurant = menu.restaurant
+   
+   
     return redirect(reverse('get_customer_menu', args=(restaurant.id, menu.id)))
     
     
@@ -39,4 +42,4 @@ def delete_cart_item(request, id):
     cart = request.session.get('cart', {})
     del cart[id]
     request.session['cart'] = cart   
-    return redirect('view_cart')     
+    return redirect('view_cart')    

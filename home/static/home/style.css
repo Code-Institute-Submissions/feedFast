@@ -15,7 +15,7 @@ li {
     line-height: 1.8;
 }
 
-a, h4 {
+a, h4, h3 {
     color: #55A1C5;
 }
 
@@ -177,15 +177,12 @@ margin-top: 0px;
 
 .customerProfileIntro {
     padding: 20px 20px 20px 20px;
-    background-color: #55A1C5;
-    color: white;
-    text-align: center;
+    background-color: white;
+    color: #4a4a4f;
+    text-align: left;
 }
 
-.customerProfileSteps {
-    background-color: #92CCE0; 
-    color: white;
-}
+
 /*End customer profile*/
 
 /*Vendor profile*/

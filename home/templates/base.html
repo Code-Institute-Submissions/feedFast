@@ -9,7 +9,7 @@
    
     
     
-    {% block head_style %}
+      {% block head_style %}
     <link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
     <script src="//code.jquery.com/jquery.min.js"></script>
@@ -19,14 +19,10 @@
     <link rel="stylesheet" href="{% static 'home/style.css' %}">
     {% endblock head_style %}
     
-    
-    {% block js %}
-    <script src="https://code.jquery.com/jquery.min.js"></script>
-    <script src="jquery.js"></script>
+    {% block head_js %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="{% static 'home/js/script.js' %}"></script>
-    {% endblock %}
+    {% endblock head_js %}
+    <title>Ecommerce App</title>
     
     <title>FeedFast</title>
 </head>
