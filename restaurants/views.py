@@ -8,7 +8,9 @@ from .forms import createMenuForm
 from .forms import EditMenuItemForm, createMenuItemsForm, ReservationForm
 import datetime
 from django.contrib import auth, messages
-# Create your views here.
+from django.contrib.postgres.search import SearchVector
+
+
 
 def get_restaurant_page(request):
     restaurants = Restaurant.objects.all()
@@ -131,4 +133,3 @@ def book_table(request, restaurant_id):
     
     return redirect(reverse ('get_customer_view_restaurant', args=(restaurant_id,)))
     
- 
