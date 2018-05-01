@@ -42,12 +42,13 @@ This is due to a lack of data however I wanted to present the concept of this pa
 The customer profile page contains a comprehensive How-To guide along with any reservation data belonging to the logged in customer. 
 
 # Search
-Search is built into the Restaurants App and uses a simple Python function to search through all the restaurant tags, giving the customer the ability to search for restaurants with specific types of food, for e.g. Mexican. 
+Search is built into the Restaurants App and uses a simple Python function to search through all the restaurant tags, giving the customer the ability to search for restaurants by tag, name or location 
 ```
 def search_restaurants(request):
     match = request.GET.get('match')
-    restaurants = Restaurant.objects.filter(tag__icontains=request.GET['query'])
+    restaurants = Restaurant.objects.filter(Q(tag__icontains=request.GET['query']) | Q(name__icontains=request.GET['query']) | Q(city__icontains=request.GET['query']))
     return render(request, "restaurant_page.html", {"restaurants": restaurants})
+
 ```
 The results are filtered on the same page: restaurant_page.html
     
@@ -70,9 +71,8 @@ Automatic testing was carried out throughout the development of the project and 
 Follow the below instructions to clone this project for Mac (commands will be slightly different for Windows). 
 In developing this project I used Cloud9. I recommend that this is used for cloning and the following instructions have been made with this in mind. 
 
-1. Create a Cloud9 account: <https://c9.io>
+1. If you wish to create a Cloud9 account go here: <https://c9.io>
 2. Go to folder you want to put the cloned project in your terminal & type: $ git clone https://github.com/wolfenchic/feedFast.git
 2. Install the project dependancies: $ sudo pip3 install -r requirements.txt
 3. Cut ties with my github: $ git remote rm origin
-3. The following link offers a comprehensive guide on how to create and activate your virtual environment in Cloud9: <https://community.c9.io/t/how-to-install-virtual-env/10776/6>
 
