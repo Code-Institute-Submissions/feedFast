@@ -8,7 +8,7 @@ from .forms import createMenuForm
 from .forms import EditMenuItemForm, createMenuItemsForm, ReservationForm
 import datetime
 from django.contrib import auth, messages
-from django.contrib.postgres.search import SearchVector
+from django.db.models import Q
 
 
 
@@ -109,7 +109,7 @@ def delete_menu_item(request,  restaurant_id, menu_id, menu_item_id):
 
 def search_restaurants(request):
     match = request.GET.get('match')
-    restaurants = Restaurant.objects.filter(tag__icontains=request.GET['query'])
+    restaurants = Restaurant.objects.filter(Q(tag__icontains=request.GET['query']) | Q(name__icontains=request.GET['query']) | Q(city__icontains=request.GET['query']))
     return render(request, "restaurant_page.html", {"restaurants": restaurants})
 
 @login_required()
