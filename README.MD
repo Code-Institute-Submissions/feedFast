@@ -67,3 +67,12 @@ When running locally, SQLite database was used & static and media files were sto
 Automatic testing was carried out throughout the development of the project and progress can be viewed in the htmlcov folder. In addition I used <https://jigsaw.w3.org/css-validator/> to test CSS, <http://jshint.com/> to test Javascript files and responsiveness on <http://testsize.com/>. 
 
 # Installation 
+Follow the below instructions to clone this project for Mac (commands will be slightly different for Windows). 
+In developing this project I used Cloud9. I recommend that this is used for cloning and the following instructions have been made with this in mind. 
+
+1. Create a Cloud9 account: <https://c9.io>
+2. Go to folder you want to put the cloned project in your terminal & type: $ git clone https://github.com/wolfenchic/feedFast.git
+2. Install the project dependancies: $ sudo pip3 install -r requirements.txt
+3. Cut ties with my github: $ git remote rm origin
+3. The following link offers a comprehensive guide on how to create and activate your virtual environment in Cloud9: <https://community.c9.io/t/how-to-install-virtual-env/10776/6>
+
